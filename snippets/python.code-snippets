@@ -1,0 +1,705 @@
+{
+    // File
+    "Manifest": {
+        "prefix": "manifest",
+        "body": [
+            "{",
+            "\t'name': '${1}',",
+            "\t'version': '${2:1.0}',",
+            "\t'description': '${3}',",
+            "\t'summary': '${4}',",
+            "\t'author': '${5}',",
+            "\t'website': '${6}',",
+            "\t'license': '${7:LGPL-3}',",
+            "\t'category': '${8}',",
+            "\t'depends': [\n\t\t'${9}'\n\t],",
+            "\t'data': [\n\t\t'${10}'\n\t],",
+            "\t'demo': [\n\t\t'${11}'\n\t],",
+            "\t'auto_install': ${12|False,True|},",
+            "\t'application': ${13|False,True|},",
+            "\t'assets': {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Manifest JSON"
+    },
+    "Copyright": {
+        "prefix": "oocopyright",
+        "body": [
+            "",
+            "# -*- coding: utf-8 -*-",
+            "###############################################################################",
+            "#",
+            "#\tCopyright (c) All rights reserved:",
+            "#\t\t(c) $CURRENT_YEAR  $TM_FILENAME",
+            "#",
+            "#\tThis program is free software: you can redistribute it and/or modify",
+            "#\tit under the terms of the GNU Affero General Public License as",
+            "#\tpublished by the Free Software Foundation, either version 3 of the",
+            "#\tLicense, or (at your option) any later version.",
+            "#",
+            "#\tThis program is distributed in the hope that it will be useful,",
+            "#\tbut WITHOUT ANY WARRANTY; without even the implied warranty of",
+            "#\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the",
+            "#\tGNU Affero General Public License for more details.",
+            "#",
+            "#\tYou should have received a copy of the GNU Affero General Public License",
+            "#\talong with this program.  If not, see http://www.gnu.org/licenses",
+            "#\t",
+            "#\tOdoo and OpenERP is trademark of Odoo S.A.",
+            "#",
+            "###############################################################################",
+            "${0}",
+            ""
+        ],
+        "description": "Copyright",
+    },
+    "File __init__": {
+        "prefix": "ooinit",
+        "body": [
+            "",
+            "# -*- coding: utf-8 -*-",
+            "",
+            "from . import ${1:models}${0}",
+            ""
+        ],
+        "description": "__init__ file",
+    },
+    "File coding": {
+        "prefix": "oocoding",
+        "body": [
+            "",
+            "# -*- coding: utf-8 -*-",
+            "${0}",
+            ""
+        ],
+        "description": "utf-8 coding",
+    },
+    "Import": {
+        "prefix": "imo",
+        "body": [
+            "from odoo import _, api, fields, models",
+            "\n"
+        ],
+        "description": "Import Odoo Model/Fields/API"
+    },
+    "Import Odoo Exceptions": {
+        "prefix": "ime",
+        "body": [
+            "from odoo.exceptions import ${1|ValidationError,RedirectWarning,AccessDenied,AccessError,CacheMiss,MissingError,UserError|}"
+        ],
+        "description": "Import Odoo Exceptions"
+    },
+    "Import Logging": {
+        "prefix": "iml",
+        "body": [
+            "import logging",
+            "\n\n_logger = logging.getLogger(__name__)",
+            "\n"
+        ],
+        "description": "Import Logging"
+    },
+    "Import From": {
+        "prefix": "imf",
+        "body": "from . import ${1:names}",
+        "description": "Import From"
+    },
+    "Model": {
+        "prefix": "oomodel",
+        "body": [
+            "class ${30:${20/([a-z]+)[\\._]?/${1:/capitalize}/g}}(models.${40|Model,AbstractModel,TransientModel|}):",
+            "\t${10|_name,_inherit|} = '${20:model.technical.name}'",
+            "\t_description = '${50:${20/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}}'",
+            "\t"
+        ],
+        "description": "Add model"
+    },
+    "Controller": {
+        "prefix": "oocontroller",
+        "body": [
+            "class ${1:ControllerName}(Controller):",
+            "",
+            "\t@route('/${3}', type='${5:http}', auth='${6:none}')",
+            "\tdef ${4:method_name}(self ${7}, **kw):",
+            "\t\t...${0}"
+        ],
+        "description": "Odoo web controller class"
+    },
+    "Route": {
+        "prefix": "ooroute",
+        "body": [
+            "",
+            "\"\"\" ",
+            "\tRoutes:",
+            "\t\t/${1:some_url}: ${2:url description}",
+            "\"\"\"",
+            "",
+            "@route('/${1}', type='${3:http}', auth='${4:none}')",
+            "def ${1/((^[A-Z])|([^a-zA-Z]))/${2:/downcase}${3:_}/g}(self${5:, **kw}):",
+            "",
+            "\tpass${0}",
+            ""
+        ],
+        "description": "Odoo web controller route",
+    },
+    "Constrains method": {
+        "prefix": "oomconstrains",
+        "body": [
+            "@api.constrains('${1:field_name}')",
+            "def _check_${1}(self):",
+            "\tfor rec in self:",
+            "\t\t...${0}"
+        ],
+        "description": "Constrains method"
+    },
+    "SQL Constraints": {
+        "prefix": "oosqlconstrains",
+        "body": [
+            "_sql_constraints = [",
+            "\t(\"${1:field_name}_${2|check,unique|}\", \"${2}(${1})\", \"${3:Error message}\"),",
+            "]"
+        ],
+        "description": "SQL Constraints"
+    },
+    // Basic Fields
+    "Boolean field": {
+        "prefix": "oofboolean",
+        "body": [
+            "${1:field_name} = fields.Boolean(string=_('${1/(.*)/${1:/capitalize}/}'), default=${2|True,False|})${0}"
+        ],
+        "description": "Boolean field"
+    },
+    "Char field": {
+        "prefix": "oofchar",
+        "body": [
+            "${1:field_name} = fields.Char(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Char field"
+    },
+    "Float field": {
+        "prefix": "ooffloat",
+        "body": [
+            "${1:field_name} = fields.Float(string=_('${1/(.*)/${1:/capitalize}/}'), digits=${2|'',()|}${0})"
+        ],
+        "description": "Float field"
+    },
+    "Integer field": {
+        "prefix": "oofinteger",
+        "body": [
+            "${1:field_name} = fields.Integer(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Integer field"
+    },
+    // Advanced Fields
+    "Binary field": {
+        "prefix": "oofbinary",
+        "body": [
+            "${1:field_name} = fields.Binary(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Binary field"
+    },
+    "Html field": {
+        "prefix": "oofhtml",
+        "body": [
+            "${1:field_name} = fields.Html(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Html field"
+    },
+    "Image field": {
+        "prefix": "oofimage",
+        "body": [
+            "${1:field_name} = fields.Image(string=_('${1/(.*)/${1:/capitalize}/}'), max_width=${2}, max_height=${3})${0}"
+        ],
+        "description": "Image field"
+    },
+    "Monetary field": {
+        "prefix": "oofmonetary",
+        "body": [
+            "${1:field_name} = fields.Monetary(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Monetary field"
+    },
+    "Selection field": {
+        "prefix": "oofselection",
+        "body": [
+            "${1:field_name} = fields.Selection(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tselection=[",
+            "\t\t('valor1', 'valor1'),",
+            "\t\t('valor2', 'valor2'),",
+            "\t],",
+            ")${0}",
+        ],
+        "description": "Selection field"
+    },
+    "Text field": {
+        "prefix": "ooftext",
+        "body": [
+            "${1:field_name} = fields.Text(string=_('${1/(.*)/${1:/capitalize}/}'))${0}"
+        ],
+        "description": "Text field"
+    },
+    "Attachment field": {
+        "prefix": "oofattach",
+        "body": [
+            "${1:field_name} = fields.Binary(string=_('${1/(.*)/${1:/capitalize}/}'), attachment=True)"
+        ],
+        "description": "Attachment field"
+    },
+    // Date(time) Fields
+    "Date field": {
+        "prefix": "oofdate",
+        "body": [
+            "${1:field_name} = fields.Date(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tdefault=fields.Date.context_today,",
+            ")"
+        ],
+        "description": "Date field"
+    },
+    "Datetime field": {
+        "prefix": "oofdatetime",
+        "body": [
+            "${1:field_name} = fields.Datetime(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tdefault=fields.Datetime.now,",
+            ")"
+        ],
+        "description": "Datetime field"
+    },
+    "Reference field": {
+        "prefix": "oofref",
+        "body": [
+            "${1:field_name}_ref = fields.Reference(",
+            "\tstring='${1:field_name}',",
+            "\tselection=[",
+            "\t\t('model.name', 'String'),",
+            "\t\t('model.name', 'String'),",
+            "\t],",
+            ")${0}"
+        ],
+        "description": "Reference field"
+    },
+    "Compute Field": {
+        "prefix": "oofcompute",
+        "body": [
+            "${1:field_name} = fields.${2|Char,Integer,Float,Boolean,Date,Datetime,Monetary,Binary,Text,Html|}(",
+            "\tstring='${1:field_name/capitalize}',",
+            "\tcompute='_compute_${1:field_name}',",
+            ")",
+            "",
+            "",
+            "@api.depends('${3:depends}')",
+            "def _compute_${1:field_name}(self):",
+            "\tfor record in self:",
+            "\t\trecord.${1:field_name} = ${4:something}",
+        ],
+        "description": "Compute Field"
+    },
+    "Compute Field with Inverse": {
+        "prefix": "ooffullcompute",
+        "body": [
+            "${1:field_name} = fields.${2|Char,Integer,Float,Boolean|}(",
+            "\tstring='${1:field_name/capitalize}',",
+            "\tcompute='_compute_${1:field_name}',",
+            "\tinverse='_inverse_${1:field_name}',",
+            ")",
+            "",
+            "",
+            "@api.depends('${3:depends}')",
+            "def _compute_${1:field_name}(self):",
+            "\tfor record in self:",
+            "\t\trecord.${1:field_name} = ${4:something}",
+            "",
+            "",
+            "def _inverse_${1:field_name}(self):",
+            "\tfor record in self:",
+            "\t\t${5:...}",
+        ],
+        "description": "Full Compute with Inverse"
+    },
+    // Relational Fields
+    "Many2one field": {
+        "prefix": "oofm2o",
+        "body": [
+            "${1:field_name} = fields.Many2one(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tcomodel_name='${2:model.name}',",
+            ")"
+        ],
+        "description": "Many2one field"
+    },
+    "Many2many field": {
+        "prefix": "oofm2m",
+        "body": [
+            "${1:field_name} = fields.Many2many(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tcomodel_name='${2:model.name}',",
+            "\trelation='model.name_this_model_rel',",
+            "\tcolumn1='model.name_id',",
+            "\tcolumn2='this_model_id',${0}",
+            ")"
+        ],
+        "description": "Many2many field"
+    },
+    "One2many field": {
+        "prefix": "oofo2m",
+        "body": [
+            "${1:field_name} = fields.One2many(",
+            "\tstring=_('${1/(.*)/${1:/capitalize}/}'),",
+            "\tcomodel_name='${2:model.name}',",
+            "\tinverse_name='${3:field}_id',",
+            ")"
+        ],
+        "description": "One2many field"
+    },
+    // Methods
+    "Onchange method": {
+        "prefix": "oomonchange",
+        "body": [
+            "",
+            "@api.onchange('${1:field}')",
+            "def _onchange_${1}(self):",
+            "\t${3:self.${2:field} = self.${1}}",
+            "${0}",
+            ""
+        ],
+        "description": "onchange method"
+    },
+    "Onchange method 1": {
+        "prefix": "oomonchange1",
+        "body": [
+            "",
+            "@api.onchange('${1:field_name}')",
+            "def _onchange_${1}(self):",
+            " \treturn {",
+            "\t\t\t'domain': {",
+            "\t\t\t'${2:field_name}': ${6:[('${3:field_name}', '${4:=}', ${5:self.${1}})]}",
+            "\t\t}",
+            "\t}${0}",
+        ],
+        "description": "_onchange method signature, domain"
+    },
+    "Onchange method 2": {
+        "prefix": "oomonchange2",
+        "body": [
+            "",
+            "@api.onchange('${1:field}')",
+            "def _onchange_${1}(self):",
+            "\treturn {",
+            "\t\t'warning': {",
+            "\t\t\t'title': '${2:Text of the title}',",
+            "\t\t\t'message': '${3:Text of the message}'",
+            "\t\t}",
+            "\t}${0}",
+            ""
+        ],
+        "description": "_onchange method signature, warning",
+    },
+    "Override": {
+        "prefix": "oooverride",
+        "body": [
+            "def ${1:method_name}(self, ${2:vals}):",
+            "\tres = super().${1:method_name}(${2:vals})",
+            "\t${0}",
+            "\treturn res"
+        ],
+        "description": "Override Method"
+    },
+    "Create": {
+        "prefix": "oocreate",
+        "body": [
+            "@api.${1|model,model_create_multi|}",
+            "def create(self, ${2:vals}):",
+            "\treturn super(${3:ClassName}, self).create(${2:vals})"
+        ],
+        "description": "Create Method"
+    },
+    "Write": {
+        "prefix": "oowrite",
+        "body": [
+            "def write(self, vals):",
+            "\t\t${0}",
+            "\treturn super(${1:ClassName}, self).write(vals)"
+        ],
+        "description": "Write Method"
+    },
+    "Unlink": {
+        "prefix": "oounlink",
+        "body": [
+            "def unlink(self):",
+            "\t\t${0}",
+            "\treturn super(${1:ClassName}, self).unlink()"
+        ],
+        "description": "Unlink Method"
+    },
+    // Features
+    "status": {
+        "prefix": "oostatus",
+        "body": [
+            "state = fields.Selection(",
+            "\tstring='State',",
+            "\tselection=[",
+            "\t\t('draft', 'Draft'),",
+            "\t\t('confirmed', 'Confirmed'),",
+            "\t\t('close', 'Close'),",
+            "\t\t('cancel', 'Cancel'),",
+            "\t],",
+            "\tdefault='draft',",
+            "\treadonly=True,",
+            ")",
+            "",
+            "",
+            "def action_confirm(self):",
+            "\tself.write({'state': 'confirmed'})",
+            "",
+            "",
+            "def action_draft(self):",
+            "\tself.write({'state': 'draft'})",
+            "",
+            "",
+            "def action_cancel(self):",
+            "\tself.write({'state': 'cancel'})",
+            "",
+            "",
+            "def action_close(self):",
+            "\tself.write({'state': 'close'})",
+            ""
+        ],
+        "description": "status feature"
+    },
+    "Mail thread support": {
+        "prefix": "oomailthread",
+        "body": [
+            "_inherit = ['mail.thread', 'mail.activity.mixin']"
+        ],
+        "description": "Mail thread support feature"
+    },
+    // Miscellaneous
+    "related": {
+        "prefix": "related",
+        "body": [
+            "related='${1:field_name}'"
+        ],
+        "description": "Related Attribute"
+    },
+    "required": {
+        "prefix": "required",
+        "body": [
+            "required=${1|True,False|}"
+        ],
+        "description": "Required Attribute"
+    },
+    "readonly": {
+        "prefix": "readonly",
+        "body": [
+            "readonly=${1|True,False|}"
+        ],
+        "description": "Readonly Attribute"
+    },
+    "copy": {
+        "prefix": "copy",
+        "body": [
+            "copy=${1|True,False|}"
+        ],
+        "description": "Copy Attribute"
+    },
+    "store": {
+        "prefix": "store",
+        "body": [
+            "store=${1|True,False|}"
+        ],
+        "description": "Store Attribute"
+    },
+    "digits": {
+        "prefix": "digits",
+        "body": [
+            "digits='${1}'"
+        ],
+        "description": "Digits Attribute"
+    },
+    "help": {
+        "prefix": "help",
+        "body": [
+            "help='${1}'"
+        ],
+        "description": "Help Attribute"
+    },
+    "check_company": {
+        "prefix": "check_company",
+        "body": [
+            "check_company=True"
+        ],
+        "description": "Check Company Attribute"
+    },
+    "Domain": {
+        "prefix": "oodomain",
+        "body": [
+            "",
+            "domain=[('${1}','${2|=, !=,in,not in, like, ilike, child_of, parent_of|}', ${3})]${0}",
+            ""
+        ],
+        "description": "Field attribute: domain",
+    },
+    "Domain lambda": {
+        "prefix": "oodomain",
+        "body": [
+            "",
+            "domain=lambda self: self._get_${1:field}_domain()",
+            ""
+        ],
+        "description": "Field attribute: domain lambda",
+    },
+    "Company asociated": {
+        "prefix": "oocompany",
+        "body": [
+            "",
+            "company_id = fields.Many2one(",
+            "\tstring=_('Company'), ",
+            "\tcomodel_name='res.company', ",
+            "\trequired=${1|True,False|}, ",
+            "\tdefault=lambda self: self.env.user.company_id",
+            ")",
+            ""
+        ],
+        "description": "Company asociated",
+    },
+    "User asociated": {
+        "prefix": "oouser",
+        "body": [
+            "",
+            "user_id = fields.Many2one(",
+            "\tstring=_('User'), ",
+            "\tcomodel_name='res.users', ",
+            "\trequired=${1|True,False|}, ",
+            "\tdefault=lambda self: self.env.user",
+            ")",
+            ""
+        ],
+        "description": "User asociated",
+    },
+    "Partner asociated": {
+        "prefix": "oopartner",
+        "body": [
+            "",
+            "partner_id = fields.Many2one(",
+            "\tstring=_('Partner'), ",
+            "\tcomodel_name='res.partner', ",
+            "\trequired=${1|True,False|}, ",
+            ")",
+            ""
+        ],
+        "description": "Partner asociated",
+    },
+    "Import datetime": {
+        "prefix": "ooimdate",
+        "body": [
+            "",
+            "from datetime import date, datetime",
+            "from dateutil.relativedelta import relativedelta",
+            "from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT",
+            "from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT",
+            "${0}",
+            ""
+        ],
+        "description": "import date and time tools",
+    },
+    "Return act_window": {
+        "prefix": "ooractionwindow",
+        "body": [
+            "",
+            "return {",
+            "\t'name': _('${1: Human Readable String}'),",
+            "\t'type': 'ir.actions.act_window',",
+            "\t'view_mode': 'tree,form',",
+            "\t'res_model': '${2:model}',",
+            "\t'domain': [('id', 'in', ${3:ids})],",
+            "}${0}",
+            ""
+        ],
+        "description": "Return act_window",
+    },
+    "Return act_window_close": {
+        "prefix": "ooractionclose",
+        "body": [
+            "",
+            "return {'type': 'ir.actions.act_window_close'${0}",
+            ""
+        ],
+        "description": "Return act_window_close",
+    },
+    "selection_add": {
+        "prefix": "ooselectionadd",
+        "body": [
+            "",
+            "selection_add=[('${1:draft}', ${1/(.*)/${1:/capitalize}/})${0}]",
+            ""
+        ],
+        "description": "Field attribute: selection_add ",
+    },
+    // x2m Operations
+    "x2m create": {
+        "prefix": "oox2mcreate",
+        "body": [
+            "",
+            "(0, 0, ${1:{values}})",
+            ""
+        ],
+        "description": "x2m create",
+    },
+    "x2m delete": {
+        "prefix": "oox2mdelete",
+        "body": [
+            "",
+            "(2, ${1:id}, 0)",
+            ""
+        ],
+        "description": "x2m delete, don't use in create()",
+    },
+    "x2m link": {
+        "prefix": "oox2mlink",
+        "body": [
+            "",
+            "(4, ${1:id}, 0)",
+            ""
+        ],
+        "description": "x2m link, don't use in One2many",
+    },
+    "x2m replace": {
+        "prefix": "oox2mreplace",
+        "body": [
+            "",
+            "(6, 0, ${1:ids)",
+            ""
+        ],
+        "description": "x2m replace, don't use in create() and One2many",
+    },
+    "x2m unlink": {
+        "prefix": "oox2munlink",
+        "body": [
+            "",
+            "(3, ${1:id}, 0)",
+            ""
+        ],
+        "description": "x2m unlink, don't use in create()",
+    },
+    "x2m unlink_all": {
+        "prefix": "oox2munlink_all",
+        "body": [
+            "",
+            "(5, 0, 0)",
+            ""
+        ],
+        "description": "x2m unlink all, don't use in create()",
+    },
+    "x2m update": {
+        "prefix": "oox2mupdate",
+        "body": [
+            "",
+            "(1, ${1:id}, ${2:{values}})",
+            ""
+        ],
+        "description": "x2m update, don't use in create()",
+    }
+}

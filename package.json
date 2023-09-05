@@ -1,0 +1,53 @@
+{
+  "name": "mjavint-odoo-snippets",
+  "displayName": "Odoo 16+ Snippets",
+  "description": "Odoo 16+ Snippets",
+  "icon": "images/odoo.png",
+  "version": "1.1.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "odoo",
+    "snippets",
+    "python",
+    "xml",
+    "javascript",
+    "qweb",
+    "csv",
+    "owl"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/python.code-snippets"
+      },
+      {
+        "language": "xml",
+        "path": "./snippets/xml.code-snippets"
+      },
+      {
+        "language": "csv",
+        "path": "./snippets/csv.code-snippets"
+      },
+      {
+        "language": "javascript,typescript",
+        "path": "./snippets/js.code-snippets"
+      },
+      {
+        "language": "python,xml",
+        "path": "./snippets/multi.code-snippets"
+      }
+    ]
+  },
+  "homepage": "https://github.com/mjavint/odoo-snippets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjavint/odoo-snippets"
+  },
+  "publisher": "mjavint"
+}

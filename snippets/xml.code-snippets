@@ -1,0 +1,3028 @@
+{
+    "Odoo Namespace": {
+        "prefix": "<odoo>",
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<odoo>",
+            "",
+            "\t${0}",
+            "",
+            "</odoo>",
+            ""
+        ],
+        "description": "Odoo Namespace"
+    },
+    "Data": {
+        "prefix": "<data>",
+        "body": [
+            "<data${1: noupdate=\"1\"}>",
+            "",
+            "\t${0}",
+            "",
+            "</data>",
+            ""
+        ],
+        "description": "Data Tag"
+    },
+    "Root Menu": {
+        "prefix": "<menuitem>",
+        "body": [
+            "<menuitem",
+            "\tid=\"${1:model_name}_menu\"",
+            "\tname=\"${2:name}\"",
+            "\tsequence=\"${3:10}\"/>"
+        ],
+        "description": "Root Menu"
+    },
+    "Submenu": {
+        "prefix": "<menuitem>",
+        "body": [
+            "<menuitem",
+            "\tid=\"${1:model_name}_menu\"",
+            "\tname=\"${2:name}\"",
+            "\taction=\"${3:action_id}\"",
+            "\tgroups=\"${4:groups_id}\"",
+            "\tparent=\"${5:parent_id}\"",
+            "\tsequence=\"${6:10}\"/>"
+        ],
+        "description": "Submenu"
+    },
+    "Form View": {
+        "prefix": "<form>",
+        "body": [
+            "<record id=\"${1:model_name}_view_form\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.form</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<form string=\"${3}\">",
+            "\t\t\t<sheet>",
+            "\t\t\t\t<group>",
+            "\t\t\t\t\t${0}",
+            "\t\t\t\t</group>",
+            "\t\t\t</sheet>",
+            "\t\t</form>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Form View"
+    },
+    "Tree View": {
+        "prefix": "<tree>",
+        "body": [
+            "<record id=\"${1:model_name}_view_tree\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.tree</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<tree string=\"${3}\">",
+            "\t\t\t${0}",
+            "\t\t</tree>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Tree View"
+    },
+    "Kanban View": {
+        "prefix": "<kanban>",
+        "body": [
+            "<record id=\"${1:model_name}_view_kanban\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.kanban</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<kanban>",
+            "\t\t\t<templates>",
+            "\t\t\t\t<t t-name=\"kanban-box\">",
+            "\t\t\t\t\t${0}",
+            "\t\t\t\t</t>",
+            "\t\t\t</templates>",
+            "\t\t</kanban>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Kanban View"
+    },
+    "Search View": {
+        "prefix": "<search>",
+        "body": [
+            "<record id=\"${1:model_name}_view_search\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.search</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<search string=\"${3}\">",
+            "\t\t\t${0}",
+            "\t\t</search>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Search View"
+    },
+    "Calendar View": {
+        "prefix": "<calendar>",
+        "body": [
+            "<record id=\"${1:model_name}_view_calendar\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.calendar</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<calendar string=\"${3}\" date_start=\"${4:date_start_field}\" color=\"${5:color_field}\">",
+            "\t\t\t${0}",
+            "\t\t</calendar>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Calendar View"
+    },
+    "Cohort View": {
+        "prefix": "<cohort>",
+        "body": [
+            "<record id=\"${1:model_name}_view_cohort\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.cohort</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<cohort string=\"${3}\" date_start=\"${4:date_start_field}\" date_stop=\"${5:date_stop_field}\">",
+            "\t\t</cohort>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Cohort View"
+    },
+    "Gantt View": {
+        "prefix": "<gantt>",
+        "body": [
+            "<record id=\"${1:model_name}_view_gantt\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.gantt</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<gantt string=\"${3}\" date_start=\"${4:date_start_field}\" date_stop=\"${5:date_stop_field}\">",
+            "\t\t</gantt>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Gantt View"
+    },
+    "Graph View": {
+        "prefix": "<graph>",
+        "body": [
+            "<record id=\"${1:model_name}_view_graph\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.graph</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<graph string=\"${3}\" type=\"${4|bar,line,pie|}\">",
+            "\t\t\t${0}",
+            "\t\t</graph>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Graph View"
+    },
+    "Pivot View": {
+        "prefix": "<pivot>",
+        "body": [
+            "<record id=\"${1:model_name}_view_pivot\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.pivot</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<pivot string=\"${3}\" disable_linking=\"${4|true,false|}\">",
+            "\t\t\t${0}",
+            "\t\t</pivot>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Pivot View"
+    },
+    "Activity View": {
+        "prefix": "<activity>",
+        "body": [
+            "<record id=\"${1:model_name}_view_activity\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.activity</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<activity string=\"${3}\">",
+            "\t\t\t<templates>",
+            "\t\t\t\t<div t-name=\"activity-box\">",
+            "\t\t\t\t\t${0}",
+            "\t\t\t\t</div>",
+            "\t\t\t</templates>",
+            "\t\t</activity>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Activity View"
+    },
+    "Qweb View": {
+        "prefix": "<qweb>",
+        "body": [
+            "<record id=\"${1:model_name}_view_qweb\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${2:${1/[_]/./g}}.view.qweb</field>",
+            "\t<field name=\"model\">${2:${1/[_]/./g}}</field>",
+            "\t<field name=\"type\">qweb</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t${0}",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Qweb View"
+    },
+    "Inherit View": {
+        "prefix": "<viewInherit>",
+        "body": [
+            "<record id=\"${1:inherit_view_id}_inherit_${2:module_name}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${3:model.name}.view.${4|form,list,kanban,search,calendar,cohort,gantt,graph,pivot,activity,qweb|}.inherit</field>",
+            "\t<field name=\"model\">${3:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${5:inherit_module_name}.${1:inherit_view_id}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t${0}",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit View"
+    },
+    "Header Button": {
+        "prefix": "<buttonHeader>",
+        "body": [
+            "<button string=\"${1}\" name=\"${2:action_name}\" type=\"${3|object,action|}\" class=\"oe_highlight\"/>"
+        ],
+        "description": "Button in Form View Header"
+    },
+    "Button Box": {
+        "prefix": "<buttonBox>",
+        "body": [
+            "<div class=\"oe_button_box\" name=\"button_box\">",
+            "\t<button name=\"${1:action_name}\" type=\"${2|object,action|}\" class=\"oe_stat_button\" icon=\"fa-${3}\">",
+            "\t\t<field name=\"${4:field_name}\" string=\"${5}\" widget=\"statinfo\"/>",
+            "\t</button>",
+            "</div>"
+        ],
+        "description": "Stat Button Container"
+    },
+    "Stat Button": {
+        "prefix": "<buttonStat>",
+        "body": [
+            "<button name=\"${1:action_name}\" type=\"${2|object,action|}\" class=\"oe_stat_button\" icon=\"fa-${3}\">",
+            "\t<field name=\"${4:field_name}\" string=\"${5}\" widget=\"statinfo\"/>",
+            "</button>"
+        ],
+        "description": "Stat Button"
+    },
+    "Self Closing Field": {
+        "prefix": "<field>",
+        "body": [
+            "<field name=\"${1}\" ${2}/>${0}"
+        ],
+        "description": "Self Closing Field"
+    },
+    "Field": {
+        "prefix": "<field>",
+        "body": [
+            "<field name=\"${1}\"${2}>${3}</field>${0}"
+        ],
+        "description": "Field"
+    },
+    "Filter": {
+        "prefix": "<filter>",
+        "body": [
+            "<filter name=\"${1:filter_name}\" string=\"${2:${1/([a-z]+)([\\._]?)/${1:/capitalize}/g}}\" domain=\"[('${3:field_name}', '${4:=}', '${5:value}')]\" context=\"{'${6:group_by}': '${7:field_name}'}\" />$0"
+        ],
+        "description": "Filter in Search View"
+    },
+    "Notebook": {
+        "prefix": "<notebook>",
+        "body": [
+            "<notebook>",
+            "\t<page name=\"${1:name}\" string=\"${2:string}\">",
+            "\t\t$0",
+            "\t</page>",
+            "</notebook>"
+        ],
+        "description": "Notebook"
+    },
+    "Page": {
+        "prefix": "<page>",
+        "body": [
+            "<page name=\"${1:name}\" string=\"${2:string}\">",
+            "\t$0",
+            "</page>"
+        ],
+        "description": "Notebook Page"
+    },
+    "Chatter": {
+        "prefix": "<chatter>",
+        "body": [
+            "<div class=\"oe_chatter\">",
+            "\t<field name=\"message_follower_ids\" widget=\"mail_followers\"/>",
+            "\t<field name=\"activity_ids\" widget=\"mail_activity\"/>",
+            "\t<field name=\"message_ids\" widget=\"mail_thread\"/>",
+            "</div>"
+        ],
+        "description": "Chatter"
+    },
+    "Action": {
+        "prefix": "<action>",
+        "body": [
+            "<record id=\"${1:model_name}_action\" model=\"ir.actions.act_window\">",
+            "\t<field name=\"name\">${2:Action Name}</field>",
+            "\t<field name=\"res_model\">${3:${1/[_]/./g}}</field>",
+            "\t<field name=\"view_mode\">${4:tree,form}</field>",
+            "\t<field name=\"domain\">[${5}]</field>",
+            "\t<field name=\"context\">{${6}}</field>",
+            "\t<field name=\"help\" type=\"html\">",
+            "\t\t${0}",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Action"
+    },
+    "Action View": {
+        "prefix": "<actionView>",
+        "body": [
+            "<record id=\"action_${1:action_view_name}\" model=\"ir.actions.act_window.view\">",
+            "\t<field name=\"sequence\" eval=\"${2:1}\"/>",
+            "\t<field name=\"view_mode\">${3:view_name}</field>",
+            "\t<field name=\"act_window_id\" ref=\"${4:action_id}\"/>",
+            "\t<field name=\"view_id\" ref=\"${5:view_id}\"/>",
+            "</record>"
+        ],
+        "description": "View in Action"
+    },
+    "Server Action": {
+        "prefix": "<actionServer>",
+        "body": [
+            "<record id=\"${1:model_name}_action_server\" model=\"ir.actions.server\">",
+            "\t<field name=\"name\">${2:Action Name}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${1:model_name}\"/>",
+            "\t<field name=\"binding_model_id\" ref=\"model_${1:model_name}\"/>",
+            "\t<field name=\"state\">code</field>",
+            "\t<field name=\"code\">${0}</field>",
+            "</record>"
+        ],
+        "description": "Server Action"
+    },
+    "URL Action": {
+        "prefix": "<actionUrl>",
+        "body": [
+            "<record id=\"action_${1:action_name}\" model=\"ir.actions.act_url\">",
+            "\t<field name=\"name\">${2:Action Name}</field>",
+            "\t<field name=\"url\">${3:url}</field>",
+            "\t<field name=\"target\">${4|new,self|}</field>",
+            "</record>"
+        ],
+        "description": "URL Action"
+    },
+    "Client Action": {
+        "prefix": "<actionClient>",
+        "body": [
+            "<record id=\"action_${1:action_name}\" model=\"ir.actions.client\">",
+            "\t<field name=\"name\">${2:Action Name}</field>",
+            "\t<field name=\"tag\">${3:action_tag_name}</field>",
+            "\t<field name=\"target\">${4|main,fullscreen,new|}</field>",
+            "</record>"
+        ],
+        "description": "Client Action"
+    },
+    "Report Action": {
+        "prefix": "<actionReport>",
+        "body": [
+            "<record id=\"action_report_${1:action_name}\" model=\"ir.actions.report\">",
+            "\t<field name=\"name\">${2:Name}</field>",
+            "\t<field name=\"model\">${3:${1/[_]/./g}}</field>",
+            "\t<field name=\"report_type\">${4|qweb-pdf,qweb-html,qweb-text|}</field>",
+            "\t<field name=\"report_name\">${5:report.name}</field>",
+            "\t<field name=\"report_file\">${5:report.name}</field>",
+            "\t<field name=\"print_report_name\">'%s' % object.name</field>",
+            "\t<field name=\"binding_model_id\" ref=\"model_${1}\"/>",
+            "\t<field name=\"binding_type\">report</field>",
+            "</record>"
+        ],
+        "description": "Report Action"
+    },
+    "Report Template": {
+        "prefix": "<report>",
+        "body": [
+            "<template id=\"${1:report_template_name}\">",
+            "\t<t t-call=\"web.html_container\">",
+            "\t\t<t t-foreach=\"docs\" t-as=\"o\">",
+            "\t\t\t<t t-call=\"web.${2|external,internal|}_layout\">",
+            "\t\t\t\t<div class=\"page\">",
+            "\t\t\t\t\t${0}",
+            "\t\t\t\t</div>",
+            "\t\t\t</t>",
+            "\t\t</t>",
+            "\t</t>",
+            "</template>"
+        ],
+        "description": "Report Template"
+    },
+    "Cron": {
+        "prefix": "<cron>",
+        "body": [
+            "<record id=\"${1:model_name}_cron\" model=\"ir.cron\">",
+            "\t<field name=\"name\">${2:Cron Name}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${1:model_name}\"/>",
+            "\t<field name=\"interval_number\">${4:1}</field>",
+            "\t<field name=\"interval_type\">${5|minutes,hours,days,weeks,months|}</field>",
+            "\t<field name=\"numbercall\">${6:-1}</field>",
+            "\t<field name=\"state\">code</field>",
+            "\t<field name=\"code\">${0}</field>",
+            "</record>"
+        ],
+        "description": "Cron"
+    },
+    "Record": {
+        "prefix": "<record>",
+        "body": [
+            "<record id=\"${1:record_name}\" model=\"${2:model_name}\">",
+            "\t<field name=\"${3:field_name}\">${4:field_value}</field>",
+            "</record>"
+        ],
+        "description": "Record"
+    },
+    "Function": {
+        "prefix": "<function>",
+        "body": [
+            "<function model=\"${1:model.name}\" name=\"${2:method_name}\" eval=\"[ref('${3:record_id}')]\">",
+            "</function>"
+        ],
+        "description": "Function"
+    },
+    "Template": {
+        "prefix": "<template>",
+        "body": [
+            "<template id=\"${1:template_id}\" name=\"${2:template_name}\">",
+            "\t${0}",
+            "</template>"
+        ],
+        "description": "Template"
+    },
+    "Inherit Template": {
+        "prefix": "<templateInherit>",
+        "body": [
+            "<template id=\"${1:template_id}\" name=\"${3:template_name}\" inherit_id=\"${2:module_name}.${1:template_id}\">",
+            "\t<xpath expr=\"${4}\" position=\"${5|inside,after,before,replace,move,attributes|}\">",
+            "\t\t$0",
+            "\t</xpath>",
+            "</template>"
+        ],
+        "description": "Inherit Template"
+    },
+    "Xpath": {
+        "prefix": "<xpath>",
+        "body": [
+            "<xpath expr=\"${1}\" position=\"${2|inside,after,before,replace,move,attributes|}\">",
+            "\t$0",
+            "</xpath>"
+        ],
+        "description": "Xpath"
+    },
+    "Xpath Attributes": {
+        "prefix": "<xpathAttr>",
+        "body": [
+            "<xpath expr=\"${1}\" position=\"attributes\">",
+            "\t<attribute name=\"${20}\" ${30:separator=\"${35}\" }${40:add=\"${45}\" }${50:remove=\"${55}\" }${63:value=\"${60}\"}${66:>${60}</attribute}>",
+            "</xpath>"
+        ],
+        "description": "Xpath to Attributes"
+    },
+    "Xpath Field": {
+        "prefix": "<xpathField>",
+        "body": [
+            "<field position=\"${1|after,before,replace,move,attributes|}\">",
+            "\t$0",
+            "</field>"
+        ],
+        "description": "Xpath for Field"
+    },
+    "Attribute": {
+        "prefix": "<attribute>",
+        "body": [
+            "<attribute name=\"${20}\" ${30:separator=\"${35}\" }${40:add=\"${45}\" }${50:remove=\"${55}\" }${63:value=\"${60}\"}${66:>${60}</attribute}>"
+        ],
+        "description": "Attribute for Xpath"
+    },
+    "Group": {
+        "prefix": "<group>",
+        "body": [
+            "<group name=\"${1:name}\" string=\"${2:string}\">",
+            "\t$0",
+            "</group>"
+        ],
+        "description": "Group"
+    },
+    "Script": {
+        "prefix": "<script>",
+        "body": [
+            "<script type=\"text/javascript\" src=\"/${1:module_name}/static/src/js/${2:filename}.js\"/>"
+        ],
+        "description": "Script"
+    },
+    "Link": {
+        "prefix": "<link>",
+        "body": [
+            "<link rel=\"stylesheet\" type=\"text/scss\" href=\"/${1:module_name}/static/src/scss/${2:filename}.scss\"/>"
+        ],
+        "description": "SCSS Link"
+    },
+    "Backend Assets": {
+        "prefix": "<assetsBackend>",
+        "body": [
+            "<template id=\"assets_backend\" name=\"${1:Backend Assets}\" inherit_id=\"web.assets_backend\">",
+            "\t<xpath expr=\".\" position=\"inside\">",
+            "\t\t<script type=\"text/javascript\" src=\"/${2:module_name}/static/src/js/${2:module_name}.js\"/>",
+            "\t\t<link rel=\"stylesheet\" type=\"text/scss\" href=\"/${2:module_name}/static/src/scss/${2:module_name}.scss\"/>",
+            "\t</xpath>",
+            "</template>"
+        ],
+        "description": "Backend Assets"
+    },
+    "Frontend Assets": {
+        "prefix": "<assetsFrontend>",
+        "body": [
+            "<template id=\"assets_frontend\" name=\"${1:Frontend Assets}\" inherit_id=\"website.assets_frontend\">",
+            "\t<xpath expr=\".\" position=\"inside\">",
+            "\t\t<script type=\"text/javascript\" src=\"/${2:module_name}/static/src/js/${2:module_name}.js\"/>",
+            "\t\t<link rel=\"stylesheet\" type=\"text/scss\" href=\"/${2:module_name}/static/src/scss/${2:module_name}.scss\"/>",
+            "\t</xpath>",
+            "</template>"
+        ],
+        "description": "Frontend Assets"
+    },
+    "t-if": {
+        "prefix": "<t-if>",
+        "body": [
+            "<t t-if=\"${1:condition}\">",
+            "\t$0",
+            "</t>"
+        ],
+        "description": "If Condition"
+    },
+    "t-if-else": {
+        "prefix": "<t-if-else>",
+        "body": [
+            "<t t-if=\"${1:condition}\">",
+            "\t$0",
+            "</t>",
+            "<t t-elif=\"${2:condition}\">",
+            "</t>",
+            "<t t-else=\"\">",
+            "</t>"
+        ],
+        "description": "If Else Condition"
+    },
+    "t-foreach": {
+        "prefix": "<t-foreach>",
+        "body": [
+            "<t t-foreach=\"${1:iteration}\" t-as=\"${2:variable}\">",
+            "\t$0",
+            "</t>"
+        ],
+        "description": "Foreach Loop"
+    },
+    "t-set": {
+        "prefix": "<t-set>",
+        "body": [
+            "<t t-set=\"${1:variable}\" t-value=\"${2:value}\"/>"
+        ],
+        "description": "Set Variable"
+    },
+    "t-esc": {
+        "prefix": "<t-esc>",
+        "body": [
+            "<t t-esc=\"${0:expression}\"/>"
+        ],
+        "description": "Evaluate Expression"
+    },
+    "t-out": {
+        "prefix": "<t-out>",
+        "body": [
+            "<t t-out=\"${0:expression}\"/>"
+        ],
+        "description": "Evaluate Expression"
+    },
+    "t-raw": {
+        "prefix": "<t-raw>",
+        "body": [
+            "<t t-raw=\"${0:variable}\"/>"
+        ],
+        "description": "Evaluate Html Content"
+    },
+    "t-call": {
+        "prefix": "<t-call>",
+        "body": [
+            "<t t-call=\"${0:template_name}\"/>"
+        ],
+        "description": "Call Other Template"
+    },
+    "t-debug": {
+        "prefix": "<t-debug>",
+        "body": [
+            "<t t-debug=\"${0:pdb}\"/>"
+        ],
+        "description": "Invokes a Debugger"
+    },
+    "t-log": {
+        "prefix": "<t-log>",
+        "body": [
+            "<t t-log=\"${0:expression}\"/>"
+        ],
+        "description": "Log the Expression Result"
+    },
+    "t-att": {
+        "prefix": "t-att",
+        "body": [
+            "t-att-${1:attribute_name}=\"${0:value}\""
+        ],
+        "description": "t-att"
+    },
+    "t-attf": {
+        "prefix": "t-attf",
+        "body": [
+            "t-attf-${1:attribute_name}=\"${0:value}\""
+        ],
+        "description": "t-attf"
+    },
+    {
+        "action/binding": {
+            "body": [
+                "",
+                "<field name=\"binding_model_id\" ref=\"${1:module.model_model_name}\" />",
+                ""
+            ],
+            "description": "Fully formated time relative to now",
+            "prefix": "oo_action/binding"
+        },
+        "arch/form": {
+            "body": [
+                "",
+                "<form string=\"${1:Caption}\" create=\"${2:true}\" delete=\"${3:true}\" edit=\"${4:true}\">",
+                "    <sheet>",
+                "        <div class=\"oe_title\">",
+                "            <label for=\"${5:name}\" class=\"oe_edit_only\" />",
+                "            <h1><field name=\"${5}\" placeholder=\"${7:Describe the item...}\" /></h1>",
+                "        </div>",
+                "        ${0}",
+                "    </sheet>",
+                "</form>",
+                ""
+            ],
+            "description": "Common form tag to be added inside a ir.ui.view",
+            "prefix": "oo_arch/form"
+        },
+        "arch/graph": {
+            "body": [
+                "",
+                "<graph string=\"${1:Graph title}\" type=\"${2:one # bar # pie # line # pivot}\">",
+                "    <field type=\"row\" name=\"${3:row_field}\" />",
+                "    <field type=\"col\" name=\"${4:col_field}\" interval=\"month\" />",
+                "    <field type=\"measure\" name=\"${5:measure_field}\" />",
+                "</graph>${0}",
+                ""
+            ],
+            "description": "Common graph tag to be added inside a ir.ui.view",
+            "prefix": "oo_arch/graph"
+        },
+        "arch/pivot": {
+            "body": [
+                "",
+                "<pivot string=\"${1:Graph title}\" type=\"${2:one # bar # pie # line # pivot}\">",
+                "    <field type=\"row\" name=\"${3:row_field}\" />",
+                "    <field type=\"col\" name=\"${4:col_field}\" interval=\"month\" />",
+                "    <field type=\"measure\" name=\"${5:measure_field}\" />",
+                "</pivot>${0}",
+                ""
+            ],
+            "description": "Common graph tag to be added inside a ir.ui.view",
+            "prefix": "oo_arch/pivot"
+        },
+        "arch/search": {
+            "body": [
+                "",
+                "<search string=\"${1:Name}\">",
+                "    ${0}",
+                "</search>",
+                ""
+            ],
+            "description": "Common search tag to be added inside a ir.ui.view",
+            "prefix": "oo_arch/search"
+        },
+        "arch/tree": {
+            "body": [
+                "",
+                "<tree string=\"${1:Caption}\" create=\"${2:true}\" delete=\"${3:true}\" edit=\"${4:true}\"${6: editable=\"${5:bottom}\"}>",
+                "    ${0}",
+                "</tree>",
+                ""
+            ],
+            "description": "Common tree tag to be added inside a ir.ui.view",
+            "prefix": "oo_arch/tree"
+        },
+        "attribute": {
+            "body": [
+                "",
+                "<attribute name=\"${1:ATTRIBUTE_NAME}\">${2:ATTRIBUTE_VALUE}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute"
+        },
+        "attribute/domain": {
+            "body": [
+                "",
+                "<attribute name=\"domain\">[(${1:FIELD},${2:OP},${3:VALUE})]</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/domain"
+        },
+        "attribute/domain1": {
+            "body": [
+                "",
+                "<attribute name=\"domain\">[(${1:FIELD},${2:OP},${3:VALUE})]</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/domain"
+        },
+        "attribute/invisible": {
+            "body": [
+                "",
+                "<attribute name=\"invisible\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/invisible"
+        },
+        "attribute/invisible1": {
+            "body": [
+                "",
+                "<attribute name=\"invisible\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/invisible"
+        },
+        "attribute/options": {
+            "body": [
+                "",
+                "<attribute name=\"options\">{${1:KEY}:${2:VALUE}}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/options"
+        },
+        "attribute/options1": {
+            "body": [
+                "",
+                "<attribute name=\"options\">{${1:KEY}:${2:VALUE}}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/options"
+        },
+        "attribute/readonly": {
+            "body": [
+                "",
+                "<attribute name=\"readonly\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/readonly"
+        },
+        "attribute/readonly1": {
+            "body": [
+                "",
+                "<attribute name=\"readonly\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/readonly"
+        },
+        "attribute/required": {
+            "body": [
+                "",
+                "<attribute name=\"required\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/required"
+        },
+        "attribute/required1": {
+            "body": [
+                "",
+                "<attribute name=\"required\">${1:True}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute/required"
+        },
+        "attribute1": {
+            "body": [
+                "",
+                "<attribute name=\"${1:ATTRIBUTE_NAME}\">${2:ATTRIBUTE_VALUE}</attribute>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_attribute"
+        },
+        "attrs": {
+            "body": [
+                "",
+                "attrs=\"{ ${0} }\"",
+                ""
+            ],
+            "description": "field attr attrs",
+            "prefix": "oo_attrs"
+        },
+        "attrs/invisible": {
+            "body": [
+                "",
+                "'column_invisible': [('state','not in',('draft'))] ${0}",
+                ""
+            ],
+            "description": "field attr attrs column_invisible",
+            "prefix": "oo_attrs/invisible"
+        },
+        "attrs/invisible1": {
+            "body": [
+                "",
+                "'invisible': [('state','not in',('draft'))] ${0}",
+                ""
+            ],
+            "description": "field attr attrs invisible",
+            "prefix": "oo_attrs/invisible"
+        },
+        "attrs/readonly": {
+            "body": [
+                "",
+                "'readonly': [('state','not in',('draft'))] ${0}",
+                ""
+            ],
+            "description": "field attr attrs readonly",
+            "prefix": "oo_attrs/readonly"
+        },
+        "attrs/required": {
+            "body": [
+                "",
+                "'required': [('state','not in',('draft'))] ${0}",
+                ""
+            ],
+            "description": "field attr attrs required",
+            "prefix": "oo_attrs/required"
+        },
+        "button/cancel": {
+            "body": [
+                "",
+                "<button string=\"Cancel\" special=\"cancel\" class=\"oe_link\"/>",
+                ""
+            ],
+            "description": "Cancel button tag definition",
+            "prefix": "oo_button/cancel"
+        },
+        "button/full": {
+            "body": [
+                "",
+                "<button name=\"${1:function_name}\"",
+                "        string=\"${2:string}\"${4:",
+                "        type=\"${3:object}\"}${5:",
+                "        special=\"cancel\"}${7:",
+                "        default_focus=\"${6:0}\"}${9:",
+                "        icon=\"${8:gtk-apply}\"}${11:",
+                "        confirm=\"${10:message}\"}${13:",
+                "        help=\"${12:message}\"} />",
+                ""
+            ],
+            "description": "Common button tag definition",
+            "prefix": "oo_button/full"
+        },
+        "button/inline": {
+            "body": [
+                "",
+                "<button name=\"${1:function_name}\" string=\"${2:string}\" ${4:type=\"${3:object}\"} class=\"oe_highlight\"/>",
+                ""
+            ],
+            "description": "Inline button tag definition",
+            "prefix": "oo_button/inline"
+        },
+        "chatter": {
+            "body": [
+                "",
+                "<div class=\"oe_chatter\">",
+                "    <field name=\"message_follower_ids\" widget=\"mail_followers\" />",
+                "    <field name=\"activity_ids\" widget=\"mail_activity\"/>",
+                "    <field name=\"message_ids\" widget=\"mail_thread\" />",
+                "</div>${0}",
+                ""
+            ],
+            "description": "Common XML to add a tracking area inside a form view",
+            "prefix": "oo_chatter"
+        },
+        "class/oe_edit_only": {
+            "body": [
+                "",
+                "class=\"oe_edit_only\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_edit_only",
+            "prefix": "oo_class/oe_edit_only"
+        },
+        "class/oe_inline": {
+            "body": [
+                "",
+                "class=\"oe_inline\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_inline",
+            "prefix": "oo_class/oe_inline"
+        },
+        "class/oe_left": {
+            "body": [
+                "",
+                "class=\"oe_left\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_left",
+            "prefix": "oo_class/oe_left"
+        },
+        "class/oe_no_avatar": {
+            "body": [
+                "",
+                "class=\"oe_no_avatar\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_no_avatar",
+            "prefix": "oo_class/oe_no_avatar"
+        },
+        "class/oe_no_button": {
+            "body": [
+                "",
+                "class=\"oe_no_button\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_no_button",
+            "prefix": "oo_class/oe_no_button"
+        },
+        "class/oe_read_only": {
+            "body": [
+                "",
+                "class=\"oe_read_only\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_read_only",
+            "prefix": "oo_class/oe_read_only"
+        },
+        "class/oe_right": {
+            "body": [
+                "",
+                "class=\"oe_right\"${0}",
+                ""
+            ],
+            "description": "field attr class oe_right",
+            "prefix": "oo_class/oe_right"
+        },
+        "context1": {
+            "body": [
+                "",
+                "context=\"{'${1:key}': ${2:value}, ${0}}\"",
+                ""
+            ],
+            "description": "tag attr context",
+            "prefix": "oo_context"
+        },
+        "create": {
+            "body": [
+                "",
+                "create=\"${1:false}\"${0}",
+                ""
+            ],
+            "description": "tag attr create",
+            "prefix": "oo_create"
+        },
+        "decoration": {
+            "body": [
+                "",
+                "decoration-${1:info}=\"${2:field} == ${3:value}\"${0}",
+                ""
+            ],
+            "description": "field attr decoration",
+            "prefix": "oo_decoration"
+        },
+        "default_order": {
+            "body": [
+                "",
+                "default_order=\"${1:field},${0}\"",
+                ""
+            ],
+            "description": "field attr default_order",
+            "prefix": "oo_default_order"
+        },
+        "delete": {
+            "body": [
+                "",
+                "delete=\"${1:false}\"${0}",
+                ""
+            ],
+            "description": "tag attr delete",
+            "prefix": "oo_delete"
+        },
+        "domain2": {
+            "body": [
+                "",
+                "domain=\"[('${1:name}', '=', ${1})]\"",
+                ""
+            ],
+            "description": "field attr domain",
+            "prefix": "oo_domain"
+        },
+        "duplicate": {
+            "body": [
+                "",
+                "duplicate=\"${1:false}\"${0}",
+                ""
+            ],
+            "description": "tag attr duplicate",
+            "prefix": "oo_duplicate"
+        },
+        "edit": {
+            "body": [
+                "",
+                "edit=\"${1:false}\"${0}",
+                ""
+            ],
+            "description": "tag attr edit",
+            "prefix": "oo_edit"
+        },
+        "extid/group_no_one": {
+            "body": [
+                "",
+                "base.group_no_one${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_extid/group_no_one"
+        },
+        "extid/group_system": {
+            "body": [
+                "",
+                "base.group_system${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_extid/group_system"
+        },
+        "field/boolean": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${2:True}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Boolean",
+            "prefix": "oo_field/boolean"
+        },
+        "field/char": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\">${2:value}</field>${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Char",
+            "prefix": "oo_field/char"
+        },
+        "field/compound": {
+            "body": [
+                "",
+                "<label for=\"${1:product_qty}\"/>",
+                "<div class=\"o_row\">",
+                "    <field name=\"${1:product_qty}\"/>",
+                "    <field name=\"${2:product_uom_id}\"/>",
+                "</div> ${0}",
+                ""
+            ],
+            "description": "Compound field",
+            "prefix": "oo_field/compound"
+        },
+        "field/date": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${3:time.strftime('${2:%Y-%m-%d}')}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Date",
+            "prefix": "oo_field/date"
+        },
+        "field/datetime": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${3:time.strftime('${2:%Y-%m-%d %H:%M:%S}')}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Datetime",
+            "prefix": "oo_field/datetime"
+        },
+        "field/float": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${2:0.0}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Float",
+            "prefix": "oo_field/float"
+        },
+        "field/full": {
+            "body": [
+                "",
+                "<field",
+                "    name=\"${1:name}\"",
+                "    string=\"${2:${1/(.*?)_([a-zA-Z])/${1:/capitalize} ${2:/downcase}/g}}\"",
+                "    nolabel=\"${3:0}\"",
+                "    required=\"${4:True}\"",
+                "    readonly=\"${5:True}\"",
+                "    invisible=\"${6:True}\"",
+                "    widget=\"${7:char}\"",
+                "    class=\"${8:oe_field_${1/([^a-zA-Z\\-\\_0-9]+)/\\_/g}}\"",
+                "    placeholder=\"${9:${1/(.*?)_([a-zA-Z])/${1:/capitalize} ${2:/downcase}/g}}\"",
+                "    help=\"${10:Enter new value for ${1/(.*?)_([a-zA-Z])/${1:/capitalize} ${2:/downcase}/g}}\"",
+                "    mode=\"${11:tree}\"",
+                "    filename=\"${12:${3/\\./\\_/g}}\"",
+                "    password=\"${13:0}\"",
+                "    domain=\"${14:[]}\"",
+                "    context=\"${15:\\{\\}}\" />${0}",
+                ""
+            ],
+            "description": "Full field tag",
+            "prefix": "oo_field/full"
+        },
+        "field/html": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\"><![CDATA[",
+                "    ${2:content}",
+                "]]${-1}></field>${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Html",
+            "prefix": "oo_field/html"
+        },
+        "field/inline": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" class=\"${2:oe_inline}\"${4:",
+                "    placeholder=\"${3:Enter new value for ${1/(.*?)_([a-zA-Z])/${1:/capitalize} ${2:/downcase}/g}}\"} />${0}",
+                ""
+            ],
+            "description": "Inline field tag",
+            "prefix": "oo_field/inline"
+        },
+        "field/integer": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${2:0}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Integer",
+            "prefix": "oo_field/integer"
+        },
+        "field/many2many": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${3:[(4, ref('${2:ir.model}'))]}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Many2many",
+            "prefix": "oo_field/many2many"
+        },
+        "field/many2one": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" ref=\"${2:ir.model}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Many2one",
+            "prefix": "oo_field/many2one"
+        },
+        "field/one2many": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\" eval=\"${3:[(4, ref('${2:ir.model}'))]}\" />${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type One2many",
+            "prefix": "oo_field/one2many"
+        },
+        "field/selection": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\">${2:value}</field>${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Selection",
+            "prefix": "oo_field/selection"
+        },
+        "field/simple": {
+            "body": [
+                "",
+                "<field name=\"${1:field_name}\" />${0}",
+                ""
+            ],
+            "description": "Simple field tag",
+            "prefix": "oo_field/simple"
+        },
+        "field/text": {
+            "body": [
+                "",
+                "<field name=\"${1:name}\"><![CDATA[",
+                "    ${2:content}",
+                "]]${-1}></field>${0}",
+                ""
+            ],
+            "description": "Common XML tag for field type Text",
+            "prefix": "oo_field/text"
+        },
+        "field_group_ids/display_incoterm": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('sale_stock.group_display_incoterm'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/display_incoterm"
+        },
+        "field_group_ids/multi_company": {
+            "body": [
+                "",
+                " <field name=\"groups_id\" eval=\"[(4, ref('base.group_multi_company'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/multi_company"
+        },
+        "field_group_ids/no_one": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('base.group_no_one'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/no_one"
+        },
+        "field_group_ids/production_lot": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('stock.group_production_lot'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/production_lot"
+        },
+        "field_group_ids/stock_multi_locations": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('stock.group_stock_multi_locations'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/stock_multi_locations"
+        },
+        "field_group_ids/system": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('base.group_system'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/system"
+        },
+        "field_group_ids/tracking_lot": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('stock.group_tracking_lot'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/tracking_lot"
+        },
+        "field_group_ids/tracking_owner": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('stock.group_tracking_owner'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/tracking_owner"
+        },
+        "field_group_ids/uom": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('uom.group_uom'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_group_ids/uom"
+        },
+        "field_groups_id": {
+            "body": [
+                "",
+                "<field name=\"groups_id\" eval=\"[(4, ref('${1}'))]\"/>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_field_groups_id"
+        },
+        "file/xml": {
+            "body": [
+                "",
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+                "<odoo>",
+                "    <data noupdate=\"${1:0}\">",
+                "",
+                "        ${0}",
+                "",
+                "    </data>",
+                "</odoo>",
+                ""
+            ],
+            "description": "Common base XML structure to be used in Odoo module data files",
+            "prefix": "oo_file/xml"
+        },
+        "filter/archive": {
+            "body": [
+                "",
+                "<filter string=\"\u5f52\u6863\" name=\"inactive\" domain=\"[('active','=',False)]\"/>",
+                "${0}",
+                ""
+            ],
+            "description": "Filter archived",
+            "prefix": "oo_filter/archive"
+        },
+        "filter/latest_by_day": {
+            "body": [
+                "",
+                "<filter string=\"\u672c\u65e5\u5355\u636e\" name=\"create_date\" domain=\"[('create_date','&gt;=',context_today().strftime('%Y-%m-%d')),('create_date','&lt;',(context_today()+datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]\"/>",
+                "<filter string=\"\u672c\u5468\u5355\u636e\" name=\"create_date\" domain=\"[('create_date','&gt;=',(context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%Y-%m-%d'))]\"/>",
+                "<filter string=\"\u672c\u6708\u5355\u636e\" name=\"create_date\" domain=\"[('create_date','&gt;=',datetime.date(context_today().year,context_today().month,1).strftime('%Y-%m-%d'))]\"/>",
+                ""
+            ],
+            "description": "Filter list latest order by days",
+            "prefix": "oo_filter/latest_by_day"
+        },
+        "filter_domain": {
+            "body": [
+                "",
+                "filter_domain=\"[('${1:name}', '=', ${1})]\"",
+                ""
+            ],
+            "description": "field attr filter_domain",
+            "prefix": "oo_filter_domain"
+        },
+        "function": {
+            "body": [
+                "",
+                "<function eval=\"[(${3:field}, '=', ${4:value})]\" model=\"${1:model.name}\"  name=\"${2:mothod}\">",
+                "    <function eval=\"[(${3:field}, '=', ${4:value})]\" model=\"${1:model.name}\"  name=\"search\">",
+                "    <value eval=\"{'${3:field}': ${4:value}}\"/>",
+                "</function>",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_function"
+        },
+        "group_display_incoterm": {
+            "body": [
+                "",
+                " groups=\"sale_stock.group_display_incoterm\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_display_incoterm"
+        },
+        "group_multi_company": {
+            "body": [
+                "",
+                " groups=\"base.group_multi_company\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_multi_company"
+        },
+        "group_no_one": {
+            "body": [
+                "",
+                " groups=\"base.group_no_one\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_no_one"
+        },
+        "group_production_lot": {
+            "body": [
+                "",
+                " groups=\"stock.group_production_lot\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_production_lot"
+        },
+        "group_stock_multi_locations": {
+            "body": [
+                "",
+                " groups=\"stock.group_stock_multi_locations\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_stock_multi_locations"
+        },
+        "group_system": {
+            "body": [
+                "",
+                " groups=\"base.group_system\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_system"
+        },
+        "group_tracking_lot": {
+            "body": [
+                "",
+                " groups=\"stock.group_tracking_lot\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_tracking_lot"
+        },
+        "group_tracking_owner": {
+            "body": [
+                "",
+                " groups=\"stock.group_tracking_owner\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_tracking_owner"
+        },
+        "group_uom": {
+            "body": [
+                "",
+                " groups=\"uom.group_uom\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_group_uom"
+        },
+        "groups": {
+            "body": [
+                "",
+                "groups=\"${1}\"${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_groups"
+        },
+        "groups1": {
+            "body": [
+                "",
+                "groups=\"${1:MODULE}.group_${2:GROUPNMAE}\"${0}",
+                ""
+            ],
+            "description": "field attr groups",
+            "prefix": "oo_groups"
+        },
+        "invisible": {
+            "body": [
+                "",
+                "invisible=\"${1:1}\"${0}",
+                ""
+            ],
+            "description": "field attr invisible",
+            "prefix": "oo_invisible"
+        },
+        "layout/button_box": {
+            "body": [
+                "",
+                "<div class=\"oe_button_box\" name=\"button_box\">",
+                "",
+                "${0}",
+                "</div>",
+                ""
+            ],
+            "description": "layout button_box definition",
+            "prefix": "oo_layout/button_box"
+        },
+        "layout/group": {
+            "body": [
+                "",
+                "<group>",
+                "        ${0}",
+                "    ",
+                "",
+                "</group>",
+                "",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_layout/group"
+        },
+        "layout/label": {
+            "body": [
+                "",
+                "<label for='${1:field_name}'>${2:Label}</label>",
+                ""
+            ],
+            "description": "Field Label",
+            "prefix": "oo_layout/label"
+        },
+        "layout/separator": {
+            "body": [
+                "",
+                "<separator string=\"Some Text\" colspan=\"4\" />",
+                "    ${0}",
+                ""
+            ],
+            "description": "Common separator tag to be added inside a ir.ui.view",
+            "prefix": "oo_layout/separator"
+        },
+        "link": {
+            "body": [
+                "",
+                "<link rel=\"stylesheet\" href=\"/${1:module_name}/static/src/css/${2:styles}.css\" />${0}",
+                ""
+            ],
+            "description": "Link tag to inglude an stylesheet",
+            "prefix": "oo_link"
+        },
+        "notebook": {
+            "body": [
+                "",
+                "<notebook>",
+                "    ${0}",
+                "</notebook>",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_notebook"
+        },
+        "notebook/page": {
+            "body": [
+                "",
+                "<page string=\"${1:Title}\" >",
+                "    ${0}",
+                "</page>",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_notebook/page"
+        },
+        "options/always_reload": {
+            "body": [
+                "",
+                "options=\"{'always_reload': True}\"${0}",
+                ""
+            ],
+            "description": "field attr options always_reload",
+            "prefix": "oo_options/always_reload"
+        },
+        "options/no_create": {
+            "body": [
+                "",
+                "options=\"{'no_create': True}\"${0}",
+                ""
+            ],
+            "description": "field attr options no_create",
+            "prefix": "oo_options/no_create"
+        },
+        "options/no_create_edit": {
+            "body": [
+                "",
+                "options=\"{'no_create_edit': True}\"${0}",
+                ""
+            ],
+            "description": "field attr options no_create_edit",
+            "prefix": "oo_options/no_create_edit"
+        },
+        "options/no_open": {
+            "body": [
+                "",
+                "options=\"{ 'no_open': True}\"${0}",
+                ""
+            ],
+            "description": "field attr options no_open",
+            "prefix": "oo_options/no_open"
+        },
+        "options/no_quick_create": {
+            "body": [
+                "",
+                "options=\"{'no_create': True, 'no_open': True, 'no_create_edit': True}\"${0}",
+                ""
+            ],
+            "description": "field attr options no_create/no_open/no_create_edit",
+            "prefix": "oo_options/no_quick_create"
+        },
+        "options/reload_whole_on_button": {
+            "body": [
+                "",
+                "options=\"{'reload_whole_on_button': true}\"${0}",
+                ""
+            ],
+            "description": "field attr options reload_whole_on_button",
+            "prefix": "oo_options/reload_whole_on_button"
+        },
+        "position/after": {
+            "body": [
+                "",
+                "position=\"${1:after}\"${0}",
+                ""
+            ],
+            "description": "xpath position/after",
+            "prefix": "oo_position/after"
+        },
+        "position/attributes": {
+            "body": [
+                "",
+                "position=\"${1:attributes}\"${0}",
+                ""
+            ],
+            "description": "xpath position/attributes",
+            "prefix": "oo_position/attributes"
+        },
+        "position/before": {
+            "body": [
+                "",
+                "position=\"${1:before}\"${0}",
+                ""
+            ],
+            "description": "xpath position/before",
+            "prefix": "oo_position/before"
+        },
+        "position/inside": {
+            "body": [
+                "",
+                "position=\"${1:inside}\"${0}",
+                ""
+            ],
+            "description": "xpath position/inside",
+            "prefix": "oo_position/inside"
+        },
+        "qweb_t-att": {
+            "body": [
+                "",
+                "t-att-${1:name}=\"${2:value}\"",
+                ""
+            ],
+            "description": "Qweb named attribute",
+            "prefix": "oo_qweb_t-att"
+        },
+        "qweb_t-att1": {
+            "body": [
+                "",
+                "t-att=\"${1:dict_of_pair}\"",
+                ""
+            ],
+            "description": "Qweb attribute",
+            "prefix": "oo_qweb_t-att"
+        },
+        "qweb_t-attf": {
+            "body": [
+                "",
+                "t-attf-${1:name}=\"${2:format_string}\"",
+                ""
+            ],
+            "description": "Qweb format string attribute",
+            "prefix": "oo_qweb_t-attf"
+        },
+        "qweb_t-call": {
+            "body": [
+                "",
+                "<t t-call=\"${1:template}\" />${0}",
+                ""
+            ],
+            "description": "Qweb inline call template",
+            "prefix": "oo_qweb_t-call"
+        },
+        "qweb_t-call1": {
+            "body": [
+                "",
+                "<t t-call=\"${1:template}\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb call template",
+            "prefix": "oo_qweb_t-call"
+        },
+        "qweb_t-esc": {
+            "body": [
+                "",
+                "<t t-esc=\"${1:value}\" />",
+                ""
+            ],
+            "description": "Qweb data output",
+            "prefix": "oo_qweb_t-esc"
+        },
+        "qweb_t-extend": {
+            "body": [
+                "",
+                "<t t-extend=\"${1:base.template}\">",
+                "    <t t-jquery=\"${2:ul}\" t-operation=\"${3:append}\">",
+                "        ${4:code}",
+                "    </t>${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb template inheritance",
+            "prefix": "oo_qweb_t-extend"
+        },
+        "qweb_t-field": {
+            "body": [
+                "",
+                "<${1:span} t-field=\"${2:o}.${3:name}\" />${0}",
+                ""
+            ],
+            "description": "Qweb field access",
+            "prefix": "oo_qweb_t-field"
+        },
+        "qweb_t-foreach": {
+            "body": [
+                "",
+                "<t t-foreach=\"${1:set}\" t-as=\"${2:name}\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb loop",
+            "prefix": "oo_qweb_t-foreach"
+        },
+        "qweb_t-if": {
+            "body": [
+                "",
+                "<${1:tag} t-if=\"${2:condition}\">${3:value}</${1}>${0}",
+                ""
+            ],
+            "description": "Qweb inline conditional",
+            "prefix": "oo_qweb_t-if"
+        },
+        "qweb_t-if1": {
+            "body": [
+                "",
+                "<t t-if=\"${1:codition}\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb conditional",
+            "prefix": "oo_qweb_t-if"
+        },
+        "qweb_t-js": {
+            "body": [
+                "",
+                "<t t-js=\"${1:name}\">",
+                "    ${0:console.log(\"Foo is\", ctx.foo);}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb javascript",
+            "prefix": "oo_qweb_t-js"
+        },
+        "qweb_t-log": {
+            "body": [
+                "",
+                "<t t-log=\"${1:value}\"/>${0}",
+                ""
+            ],
+            "description": "Qweb logging",
+            "prefix": "oo_qweb_t-log"
+        },
+        "qweb_t-name": {
+            "body": [
+                "",
+                "<t t-name=\"${1:template-name}\">",
+                "    ${0:<!-- template code -->}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb top level named template",
+            "prefix": "oo_qweb_t-name"
+        },
+        "qweb_t-raw": {
+            "body": [
+                "",
+                "<t t-raw=\"0\" />",
+                ""
+            ],
+            "description": "Qweb template from context",
+            "prefix": "oo_qweb_t-raw"
+        },
+        "qweb_t-set": {
+            "body": [
+                "",
+                "<t t-set=\"${1:name}\" t-value=\"${2:value}\" />${0}",
+                ""
+            ],
+            "description": "Qweb inline variable",
+            "prefix": "oo_qweb_t-set"
+        },
+        "qweb_t-set1": {
+            "body": [
+                "",
+                "<t t-set=\"${1:name}\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Qweb variable",
+            "prefix": "oo_qweb_t-set"
+        },
+        "readonly1": {
+            "body": [
+                "",
+                "readonly=\"${1:1}\"${0}",
+                ""
+            ],
+            "description": "field attr readonly",
+            "prefix": "oo_readonly"
+        },
+        "record": {
+            "body": [
+                "",
+                "<record id=\"${2:${1/(\\.+)/\\_/g}}\" model=\"${1:model.name}\">",
+                "    ${0}",
+                "</record>",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_record"
+        },
+        "record/assets": {
+            "body": [
+                "",
+                "<record id=\"view_${3/\\./\\_/g}_assets\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">${1:module} assets</field>",
+                "    <field name=\"model\"></field>",
+                "    <field name=\"type\">qweb</field>",
+                "    <field name=\"mode\">extension</field>",
+                "    <field name=\"priority\" eval=\"${2:16}\" />",
+                "    <field name=\"active\" eval=\"${3:True}\" />",
+                "    <field name=\"inherit_id\" ref=\"web.assets_backend\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <xpath expr=\".\" position=\"inside\">${5:",
+                "            <link rel=\"stylesheet\" href=\"/${3/\\./\\_/g}/static/src/css/${4:styles}.css\" />}${7:",
+                "            <script type=\"text/javascript\" src=\"/${3/\\./\\_/g}/static/src/js/${6:scripts}.js\" />}${0}",
+                "        </xpath>",
+                "    </field>",
+                "</record>",
+                ""
+            ],
+            "description": "Include module assets in backend views",
+            "prefix": "oo_record/assets"
+        },
+        "record/base.action.rule": {
+            "body": [
+                "",
+                "<record id=\"${3/\\./\\_/g}\" model=\"base.action.rule\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"active\" eval=\"${2:True}\" />",
+                "    <field name=\"sequence\" eval=\"${3:0}\" />",
+                "    <field name=\"server_action_ids\" eval=\"[(4, ref('${4:ir.actions.server}'))]\" />",
+                "    <field name=\"model_id\" ref=\"${5:ir.model}\" />",
+                "    <field name=\"kind\">${6:on_create_or_write}</field>",
+                "    <field name=\"trg_date_id\" ref=\"${7:ir.model.fields}\" />",
+                "    <field name=\"trg_date_range\" eval=\"${8:0}\" />",
+                "    <field name=\"trg_date_range_type\">${9:day}</field>${11:",
+                "    <field name=\"trg_date_calendar_id\" ref=\"${10:resource.calendar}\" />}${13:",
+                "    <field name=\"filter_id\" ref=\"${12:ir.filters}\" />}${15:",
+                "    <field name=\"filter_pre_id\" ref=\"${14:ir.filters}\" />}${17:",
+                "    <field name=\"act_user_id\" ref=\"${16:base.user_root}\" />}${19:",
+                "    <field name=\"act_followers\" eval=\"[(4, ref('${18:res.partner}'))]\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for base.action.rule",
+            "prefix": "oo_record/base.action.rule"
+        },
+        "record/email.template": {
+            "body": [
+                "",
+                "<record id=\"email_template_${12:${3/\\./\\_/g}}\" model=\"email.template\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"subject\">${2:$1}</field>",
+                "    <field name=\"email_from\">${3:$\\{object.company_id.name\\} <$\\{(object.company_id.email or user.email)|safe\\}>}</field>",
+                "    <field name=\"email_to\">${4:$\\{object.name|safe\\} <$\\{object.email|safe\\}>}</field>",
+                "    <field name=\"email_cc\">${5}</field>",
+                "    <field name=\"reply_to\">${6}</field>",
+                "    <field name=\"user_signature\" eval=\"${7:False}\" />",
+                "    <field name=\"lang\">${8:$\\{object.lang\\}}</field>",
+                "    <field name=\"auto_delete\" eval=\"${9:True}\" />",
+                "    <field name=\"model_id\" ref=\"${10:ir.model}\" />",
+                "    <field name=\"attachment_ids\" eval=\"[(4, ref('${11:ir.attachment}'))]\" />",
+                "    <field name=\"body_html\"><![CDATA[",
+                "        ${12:<p>To whom it may concern:</p>}",
+                "]]${-1}></field>",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for email.template",
+            "prefix": "oo_record/email.template"
+        },
+        "record/filter": {
+            "body": [
+                "",
+                "<!-- filter \"${1:Human readable name}\" for Model \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"filter_${2/(\\.)/\\_/g}_${3/\\./\\_/g}\" model=\"ir.filters\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\">${2:model_name_whithout_module}</field>",
+                "    <field name=\"user_id\" eval=\"${3:False}\"/>",
+                "    <field name=\"domain\">${4:[]}</field>",
+                "    <field name=\"context\">${5:{}}</field>",
+                "    <field name=\"is_default\" eval=\"${6:False}\" />",
+                "    <!-- <field name=\"action_id\" ref=\"\" /> -->",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common ir.filters record definition",
+            "prefix": "oo_record/filter"
+        },
+        "record/ir.actions.act_window": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_act_window\" model=\"ir.actions.act_window\">",
+                "    <field name=\"type\">ir.actions.act_window</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"res_model\">${2:model.name}</field>",
+                "    <field name=\"view_mode\">${3:tree,form}</field>",
+                "    <field name=\"target\">${5:current}</field>${7:",
+                "    <field name=\"domain\">[${6:}]</field>}${9:",
+                "    <field name=\"context\">${8:\\{\\}}</field>}${11:",
+                "    <field name=\"search_view_id\" ref=\"${10:ir.ui.view}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.act_window",
+            "prefix": "oo_record/ir.actions.act_window"
+        },
+        "record/ir.actions.act_window.view": {
+            "body": [
+                "",
+                "<record id=\"action_${1/[^a-zA-Z]+/\\_/g}_${2/[^a-zA-Z]+/\\_/g}\" model=\"ir.actions.act_window.view\">",
+                "    <field name=\"act_window_id\" ref=\"${1:ir.actions.act_window}\" />",
+                "    <field name=\"view_id\" ref=\"${2:ir.ui.view}\" />",
+                "    <field name=\"view_mode\">${3:tree}</field>",
+                "    <field name=\"sequence\" eval=\"${4:1}\" />",
+                "    <field name=\"multi\" eval=\"${5:False}\" />",
+                "</record>",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.act_window.view",
+            "prefix": "oo_record/ir.actions.act_window.view"
+        },
+        "record/ir.actions.report.xml": {
+            "body": [
+                "",
+                "<record id=\"action_report_${3/\\./\\_/g}\" model=\"ir.actions.report.xml\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model\">${2:model.name}</field>",
+                "    <field name=\"report_type\">${3:qweb-pdf}</field>",
+                "    <field name=\"report_name\">${4:out_filename}</field>",
+                "    <field name=\"attachment_use\" eval=\"${5:True}\" />",
+                "    <field name=\"attachment\">${6:(object.name+'.pdf')}</field>",
+                "    <field name=\"paperformat_id\" ref=\"${7:report.paperformat_euro}\" />${9:",
+                "    <field name=\"help\">${8:Something about ${1}}</field>}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.report.xml",
+            "prefix": "oo_record/ir.actions.report.xml"
+        },
+        "record/ir.actions.server": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"action_id\" ref=\"${6:ir.actions.actions}\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, invoking a client action",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.server1": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"code\">${6:action = self.browse(cr, uid, 1, context=context)}</field>",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, running Python code",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.server2": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"child_ids\" eval=\"[(6, ref('${6:ir.actions.server}'))]\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, executing multiple actions",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.server3": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"use_create\">${6:new}</field>${8:",
+                "    <field name=\"crud_model_id\" ref=\"${7:ir.model}\" />}${10:",
+                "    <field name=\"ref_object\">${9:reference}</field>}${12:",
+                "    <field name=\"fields_lines\" eval=\"[(4, ref('${11:ir.server.object.lines}'))]\" />}${14:",
+                "    <field name=\"link_new_record\" eval=\"${13:False}\" />}${16:",
+                "    <field name=\"link_field_id\" ref=\"${15:ir.model.fields}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, creating objects",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.server4": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"use_write\">${6:current}</field>${8:",
+                "    <field name=\"crud_model_id\" ref=\"${7:ir.model}\" />}${10:",
+                "    <field name=\"ref_object\">${9:reference}</field>}${12:",
+                "    <field name=\"fields_lines\" eval=\"[(4, ref('${11:ir.server.object.lines}'))]\" />}${14:",
+                "    <field name=\"write_expression\">${13:char}</field>}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, updating objects",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.server5": {
+            "body": [
+                "",
+                "<record id=\"action_${3/\\./\\_/g}_server\" model=\"ir.actions.server\">",
+                "    <field name=\"type\">ir.actions.server</field>",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:ir.model}\" />",
+                "    <field name=\"condition\" eval=\"${3:True}\" />",
+                "    <field name=\"sequence\" eval=\"${4:5}\" />",
+                "    <field name=\"context\" eval=\"${5:\\{\\}}\" />",
+                "    <field name=\"wkf_transition_id\" ref=\"${6:workflow.transition}\" />",
+                "    <field name=\"use_relational_model\">${7:base}</field>${9:",
+                "    <field name=\"wkf_model_id\" ref=\"${8:ir.model}\" />}${11:",
+                "    <field name=\"wkf_field_id\" ref=\"${10:ir.model.fields}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.actions.server, triggering",
+            "prefix": "oo_record/ir.actions.server"
+        },
+        "record/ir.actions.todo": {
+            "body": [
+                "",
+                "<record id=\"action_todo_${3/\\./\\_/g}\" model=\"ir.actions.todo\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"type\">${2:manual}</field>",
+                "    <field name=\"state\">${3:open}</field>",
+                "    <field name=\"sequence\" eval=\"${4:10}\" />",
+                "    <field name=\"action_id\" ref=\"${5:ir.actions.actions}\" />${7:",
+                "    <field name=\"note\">${6:Something about ${1}}</field>}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_record/ir.actions.todo"
+        },
+        "record/ir.config_parameter": {
+            "body": [
+                "",
+                "<record id=\"${1/[^A-Za-z]/\\_/g}\" model=\"ir.config_parameter\">",
+                "    <field name=\"key\">${1:char}</field>",
+                "    <field name=\"value\">${2:text}</field>${4:",
+                "    <field name=\"group_ids\" eval=\"[(4, ref('${3:res.groups}'))]\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common ir.config_parameter record definition",
+            "prefix": "oo_record/ir.config_parameter"
+        },
+        "record/ir.model": {
+            "body": [
+                "",
+                "<record id=\"${1/(\\.+)/_/g}_${2/(.*?)_([a-zA-Z])/${1:/downcase}_${2:/downcase}/g}\" model=\"ir.model\">",
+                "    <field name=\"model\">${1:model_name}</field>",
+                "    <field name=\"name\">${2:Human readable name}</field>",
+                "    <field name=\"state\">${3:Base | Manual}</field>",
+                "    <field name=\"info\">${4:Description}</field>",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.model",
+            "prefix": "oo_record/ir.model"
+        },
+        "record/ir.model.access": {
+            "body": [
+                "",
+                "<record id=\"access_${1/^.*model_(.*)$/\\1/g}_${2/((^.*group_$)|(\\.))/(?2:group_)(?3:\\_)/g}\" model=\"ir.model.access\">",
+                "    <field name=\"name\">${1/^.*model_(.*)$/\\1/g} ${2/((^.*group_$)|(\\.))/(?2:group_)(?3:\\_)/g}</field>",
+                "    <field name=\"model_id\" ref=\"${1:ir.model}\"/>",
+                "    <field name=\"group_id\" ref=\"${2:res.groups}\"/>",
+                "    <field name=\"perm_read\" eval=\"${3:True}\" />",
+                "    <field name=\"perm_create\" eval=\"${4:True}\" />",
+                "    <field name=\"perm_write\" eval=\"${5:True}\" />",
+                "    <field name=\"perm_unlink\" eval=\"${6:True}\" />",
+                "    <field name=\"active\" eval=\"${7:True}\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "XML ir.model.access record",
+            "prefix": "oo_record/ir.model.access"
+        },
+        "record/ir.model.data": {
+            "body": [
+                "",
+                "<record id=\"${3/(\\.+)/_/g}_${1/(\\.+)/_/g}\" model=\"ir.model.data\">",
+                "    <field name=\"name\">${1:resource_external_id}</field>",
+                "    <field name=\"model\">${2:model.name}</field>",
+                "    <field name=\"module\">${3:module_name}</field>",
+                "    <field name=\"date_init\" eval=\"${4:time.strftime('%Y-%m-%d %H:%M:%S')}\" />",
+                "    <field name=\"date_update\" eval=\"${5:time.strftime('%Y-%m-%d %H:%M:%S')}\" />",
+                "    <field name=\"res_id\" eval=\"${6:1}\" />",
+                "    <field name=\"noupdate\" eval=\"${7:True}\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.model.data",
+            "prefix": "oo_record/ir.model.data"
+        },
+        "record/ir.module.category": {
+            "body": [
+                "",
+                "<record id=\"module_category_${3/\\./\\_/g}\" model=\"ir.module.category\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"sequence\" eval=\"${2:10}\" />",
+                "    <field name=\"visible\" eval=\"${3:True}\" />",
+                "    <field name=\"description\">${4:${1} category}</field>${6:",
+                "    <field name=\"parent_id\" ref=\"${5:ir.module.category}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "XML ir.model.category record",
+            "prefix": "oo_record/ir.module.category"
+        },
+        "record/ir.rule": {
+            "body": [
+                "",
+                "<record id=\"${3/\\./\\_/g}_rule\" model=\"ir.rule\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${3:model_xml_id}\"/>",
+                "    <field name=\"global\" eval=\"${4:True}\" />",
+                "    <field name=\"perm_read\" eval=\"${5:True}\" />",
+                "    <field name=\"perm_create\" eval=\"${6:True}\" />",
+                "    <field name=\"perm_write\" eval=\"${7:True}\" />",
+                "    <field name=\"perm_unlink\" eval=\"${8:True}\" />",
+                "    <field name=\"domain_force\">${9:['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]}</field>",
+                "    <field name=\"active\" eval=\"${10:True}\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "XML ir.rule record",
+            "prefix": "oo_record/ir.rule"
+        },
+        "record/ir.values": {
+            "body": [
+                "",
+                "<record id=\"${3/\\./\\_/g}_values\" model=\"ir.values\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model_id\" ref=\"${2:module.model_external_id}\" />",
+                "    <field name=\"model\">${2/((^[^.]*.?model_)|([_]+))/(?2:)(?3:\\.)/g}</field>",
+                "    <field name=\"value\" eval=\"${4:'ir.actions.act_window,' +str(ref('${3:action_external_id}'))}\" />",
+                "    <field name=\"key\">${5:action}</field>",
+                "    <field name=\"key2\">${6:tree_but_open}</field>${8:",
+                "    <field name=\"action_id\" ref=\"${7:ir.actions.actions}\" />}${10:",
+                "    <field name=\"res_id\" eval=\"${9:1}\" />}${12:",
+                "    <field name=\"company_id\" ref=\"${11:res.company}\" />}${14:",
+                "    <field name=\"user_id\" ref=\"${13:res.users}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common record definition for ir.values",
+            "prefix": "oo_record/ir.values"
+        },
+        "record/menu": {
+            "body": [
+                "",
+                "<record id=\"menu_${3/\\./\\_/g}\" model=\"ir.ui.menu\" >",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"sequence\" eval=\"${2:10}\" />${4:",
+                "    <field name=\"action\" ref=\"${3:action_name}\" />}${6:",
+                "    <field name=\"parent_id\" ref=\"${5:base.menu_custom}\" />}",
+                "</record>${0}",
+                ""
+            ],
+            "description": "Common ir.ui.menu record definition",
+            "prefix": "oo_record/menu"
+        },
+        "record/product.product": {
+            "body": [
+                "",
+                "<record id=\"${18:${3/\\./\\_/g}_product_product}\" model=\"product.product\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"description\">${2:Description}</field>",
+                "    <field name=\"description_purchase\">${3:${2:Description}}</field>",
+                "    <field name=\"description_sale\">${4:${2:Description}}</field>",
+                "    <field name=\"categ_id\" ref=\"${5:product.category}\"/>",
+                "    <field name=\"standard_price\">${6:0.0}</field>",
+                "    <field name=\"list_price\">${7:0.0}</field>",
+                "    <field name=\"type\">${8:consu|service}</field>",
+                "    <field name=\"uom_id\" ref=\"${9:product.uom}\"/>",
+                "    <field name=\"uom_po_id\" ref=\"${10:product.uom}\"/>",
+                "    <field name=\"taxes_id\" eval=\"[(4, ref('${11:account.tax}'))]\" />",
+                "${13:    <field name=\"image\" type=\"base64\" file=\"${12:module_name/static/img/file_name.png}\"/>",
+                "}${15:    <field name=\"default_code\">${14:PRODUCT-CODE}</field>",
+                "}${17:    <field name=\"ean13\">${16:0000000000000}</field>",
+                "}</record>${0}",
+                ""
+            ],
+            "description": "XML product.product record",
+            "prefix": "oo_record/product.product"
+        },
+        "record/product.template": {
+            "body": [
+                "",
+                "<record id=\"${18:${3/\\./\\_/g}_product_template}\" model=\"product.template\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"description\">${2:Description}</field>",
+                "    <field name=\"description_purchase\">${3:${2:Description}}</field>",
+                "    <field name=\"description_sale\">${4:${2:Description}}</field>",
+                "    <field name=\"categ_id\" ref=\"${5:product.category}\"/>",
+                "    <field name=\"standard_price\">${6:0.0}</field>",
+                "    <field name=\"list_price\">${7:0.0}</field>",
+                "    <field name=\"type\">${8:consu|service}</field>",
+                "    <field name=\"uom_id\" ref=\"${9:product.uom}\"/>",
+                "    <field name=\"uom_po_id\" ref=\"${10:product.uom}\"/>",
+                "    <field name=\"taxes_id\" eval=\"[(4, ref('${11:account.tax}'))]\" />",
+                "${13:    <field name=\"image\" type=\"base64\" file=\"${12:module_name/static/img/file_name.png}\"/>",
+                "}${15:    <field name=\"default_code\">${14:PRODUCT-CODE}</field>",
+                "}${17:    <field name=\"ean13\">${16:0000000000000}</field>",
+                "}</record>${0}",
+                ""
+            ],
+            "description": "XML product.template record",
+            "prefix": "oo_record/product.template"
+        },
+        "record/res.groups": {
+            "body": [
+                "",
+                "<record id=\"group_${8:${3/\\./\\_/g}}\" model=\"res.groups\">",
+                "    <field name=\"name\">${1:Name}</field>",
+                "    <field name=\"comment\">${2:Comment}</field>",
+                "    <field name=\"category_id\" ref=\"${3:base.module_category_administration}\"/>",
+                "    <field name=\"implied_ids\" eval=\"[(4, ref('${5:base.group_user}'))]\"/>",
+                "    <field name=\"users\" eval=\"[(5, ref('${6:base.user_root}'))]\" />",
+                "</record>${0}",
+                ""
+            ],
+            "description": "XML res.groups record",
+            "prefix": "oo_record/res.groups"
+        },
+        "record/view": {
+            "body": [
+                "",
+                "<record id=\"view_${2/[^a-z]+/\\_/g}_${3}\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"model\">${2:model.name}</field>",
+                "    <field name=\"type\">${3:tree}</field>",
+                "    <field name=\"mode\">${4:primary}</field>",
+                "    <field name=\"priority\" eval=\"${5:16}\" />",
+                "    <field name=\"active\" eval=\"${6:True}\" />${8:",
+                "    <field name=\"inherit_id\" ref=\"${7:xml_id}\" />}",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        ${0}",
+                "    </field>",
+                "</record>",
+                ""
+            ],
+            "description": "Common ir.ui.view record definition",
+            "prefix": "oo_record/view"
+        },
+        "ref": {
+            "body": [
+                "",
+                "ref=\"${1:module.external_id}\"${0}",
+                ""
+            ],
+            "description": "field attr ref",
+            "prefix": "oo_ref"
+        },
+        "report.paperformat": {
+            "body": [
+                "",
+                "<record id=\"paperformat_${3/\\./\\_/g}\" model=\"report.paperformat\" >",
+                "    <field name=\"name\">${1:Human readable name}</field>",
+                "    <field name=\"format\">${2:A4}</field>",
+                "    <field name=\"orientation\">${3:Portrait}</field>",
+                "    <field name=\"default\" eval=\"${4:False}\" />",
+                "    <field name=\"dpi\" eval=\"${5:90}\" />",
+                "    <field name=\"margin_top\" eval=\"${6:40}\" />",
+                "    <field name=\"margin_right\" eval=\"${7:7}\" />",
+                "    <field name=\"margin_bottom\" eval=\"${8:20}\" />",
+                "    <field name=\"margin_left\" eval=\"${9:7}\" />",
+                "    <field name=\"header_line\" eval=\"${10:False}\" />",
+                "    <field name=\"header_spacing\" eval=\"${11:35}\" />${13:",
+                "    <field name=\"page_width\" eval=\"${12:210}\" />}${15:",
+                "    <field name=\"page_height\" eval=\"${14:297}\" />}${17:",
+                "    <field name=\"report_ids\" eval=\"[(4, ref('${16:ir.actions.report.xml}'))]\" />}${0}",
+                "</record>",
+                ""
+            ],
+            "description": "Common record definition for report.paperformat",
+            "prefix": "oo_report.paperformat"
+        },
+        "report_fullreport": {
+            "body": [
+                "",
+                "<!-- REPORT: \"${1:Human readable name}\"",
+                "",
+                "    - Module: ${2:module}    Model: ${3:model}",
+                "    - Language field used to translate it: ${4:lang}",
+                "    - Report uses attachment: ${5:True}",
+                "    - Report paperformat: ${6:report.paperformat_euro}",
+                "    - View priority: ${7:16}    Active: ${8:True}",
+                "    - Action help: ${9:Something about ${1/(.)/${1:/downcase}/g}}",
+                "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->",
+                "",
+                "<!-- Report \"${1/(.)/${1:/downcase}/g}\" document template -->",
+                "<record id=\"view_${3/\\./\\_/g}_document_qweb\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"model\">${3/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"type\">qweb</field>",
+                "    <field name=\"mode\">primary</field>",
+                "    <field name=\"priority\" eval=\"${7/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"${8/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <t t-name=\"${2/(.)/${1:/downcase}/g}.view_${3/\\./\\_/g}_document_qweb\">",
+                "            <t t-call=\"report.external_layout\">",
+                "                <div class=\"page\">",
+                "                    ${0:<h2>Report title</h2>",
+                "                    <p>This object's name is <span t-field=\"o.name\"/></p>}",
+                "                </div>",
+                "            </t>",
+                "        </t>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Report \"${1/(.)/${1:/downcase}/g}\" translate_doc template -->",
+                "<record id=\"view_${3/\\./\\_/g}_qweb\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"model\">${3/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"type\">qweb</field>",
+                "    <field name=\"mode\">primary</field>",
+                "    <field name=\"priority\" eval=\"${7/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"${8/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <t t-name=\"${2/(.)/${1:/downcase}/g}.view_${3/\\./\\_/g}_qweb\">",
+                "            <t t-call=\"report.html_container\">",
+                "                <t t-foreach=\"doc_ids\" t-as=\"doc_id\">",
+                "                    <t t-raw=\"translate_doc(doc_id, doc_model, '${4/(.)/${1:/downcase}/g}', '${2/(.)/${1:/downcase}/g}.view_${3/\\./\\_/g}_document_qweb')\"/>",
+                "                </t>",
+                "            </t>",
+                "        </t>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Report action to show: \"${1/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"action_report_${3/\\./\\_/g}\" model=\"ir.actions.report.xml\">",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"model\">${3/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"report_type\">qweb-pdf</field>",
+                "    <field name=\"report_name\">${2/(.)/${1:/downcase}/g}.view_${3/\\./\\_/g}_qweb</field>",
+                "    <field name=\"attachment_use\" eval=\"${5/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"attachment\">(object.name+'.pdf')</field>",
+                "    <field name=\"paperformat_id\" ref=\"${6/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"help\">${9/(.)/${1:/downcase}/g}</field>",
+                "</record>",
+                "",
+                "<!-- Button to print the report: \"${1/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"${3/\\./\\_/g}_values\" model=\"ir.values\">",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"model_id\" ref=\"${2/(.)/${1:/downcase}/g}.model_${3/\\./\\_/g}\" />",
+                "    <field name=\"model\">${3/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"value\" eval=\"'ir.actions.report.xml,' +str(ref('action_report_${3/\\./\\_/g}'))\" />",
+                "    <field name=\"key\">action</field>",
+                "    <field name=\"key2\">client_print_multi</field>",
+                "</record>",
+                ""
+            ],
+            "description": "Report: document and translation; action.report.xml and ir.values",
+            "prefix": "oo_report_fullreport"
+        },
+        "report_layout": {
+            "body": [
+                "",
+                "<t t-call=\"report.external_layout\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report external_layout",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout1": {
+            "body": [
+                "",
+                "<t t-call=\"report.external_layout_footer\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report external_layout_footer",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout2": {
+            "body": [
+                "",
+                "<t t-call=\"report.external_layout_header\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report external_layout_header",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout3": {
+            "body": [
+                "",
+                "<t t-call=\"report.html_container\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report html_container",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout4": {
+            "body": [
+                "",
+                "<t t-call=\"report.internal_layout\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report internal_layout",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout5": {
+            "body": [
+                "",
+                "<t t-call=\"report.layout\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report layout",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout6": {
+            "body": [
+                "",
+                "<t t-call=\"report.minimal_layout\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report minimal_layout",
+            "prefix": "oo_report_layout"
+        },
+        "report_layout7": {
+            "body": [
+                "",
+                "<t t-call=\"report.style\">",
+                "    ${0}",
+                "</t>",
+                ""
+            ],
+            "description": "Report style",
+            "prefix": "oo_report_layout"
+        },
+        "report_t": {
+            "body": [
+                "",
+                "<t t-name=\"${1:module.model.name}\">",
+                "    <t t-call=\"report.html_container\">",
+                "        <t t-foreach=\"docs\" t-as=\"o\">",
+                "            <t t-call=\"report.external_layout\">",
+                "                <div class=\"page\">",
+                "                    <h2>${2:Report title}</h2>",
+                "                    ${0:<p>This object's name is <span t-field=\"o.name\"/></p>}",
+                "                </div>",
+                "            </t>",
+                "        </t>",
+                "    </t>",
+                "</t>",
+                ""
+            ],
+            "description": "Report qweb container",
+            "prefix": "oo_report_t"
+        },
+        "report_t-raw": {
+            "body": [
+                "",
+                "<t t-raw=\"translate_doc(${1:doc_id}, ${2:doc_model}, '${3:lang}', ${4:module.template'})\" />",
+                ""
+            ],
+            "description": "Qweb translate document",
+            "prefix": "oo_report_t-raw"
+        },
+        "required1": {
+            "body": [
+                "",
+                "required=\"${1:1}\"${0}",
+                ""
+            ],
+            "description": "field attr required",
+            "prefix": "oo_required"
+        },
+        "script": {
+            "body": [
+                "",
+                "<script type=\"text/javascript\" src=\"/${1:module_name}/static/src/js/${2:scripts}.js\" />${0}",
+                ""
+            ],
+            "description": "Script tag to inglude an javascript",
+            "prefix": "oo_script"
+        },
+        "search/filter": {
+            "body": [
+                "",
+                "<filter string=\"${1:Name}\"",
+                "    name=\"${2:${1/(.*?) ([a-zA-Z])/${1:/downcase}_${2:/downcase}/g}}\"",
+                "    domain=\"${3:[]}\"",
+                "    context=\"${4:{}}\"",
+                "    help=\"${5}\" />${0}",
+                ""
+            ],
+            "description": "Common filter tag to be added inside a search view",
+            "prefix": "oo_search/filter"
+        },
+        "search/group_by": {
+            "body": [
+                "",
+                "<group expand=\"0\" string=\"Group By\">",
+                "    <filter name=\"group_by_${1:user_id} \"string=\"${2:User}\" context=\"{'group_by':'${1}'}\" help=\"${3}\"/>",
+                "    ${0}",
+                "</group>",
+                "",
+                ""
+            ],
+            "description": "",
+            "prefix": "oo_search/group_by"
+        },
+        "smart_button": {
+            "body": [
+                "",
+                "    <button class=\"oe_stat_button\" name=\"${1:action_name}\" type=\"object\" icon=\"fa-${4:search}\">",
+                "        <field string=\"${2:string}\" name=\"${3:count_name}\" widget=\"statinfo\" />",
+                "    </button>",
+                "${0}",
+                ""
+            ],
+            "description": "smart button definition",
+            "prefix": "oo_smart_button"
+        },
+        "status": {
+            "body": [
+                "",
+                "<button name=\"action_confirm\" string=\"\u786e\u8ba4\" type=\"object\" states=\"draft\" />",
+                "<button name=\"action_draft\" string=\"\u8bbe\u8349\u7a3f\" type=\"object\" states=\"cancel\" />",
+                "<button name=\"action_close\" string=\"\u5173\u95ed\" type=\"object\" states=\"confirmed\" />",
+                "<button name=\"action_cancel\" string=\"\u53d6\u6d88\" type=\"object\" states=\"draft,close\" />",
+                "<field name=\"state\" widget=\"statusbar\" />",
+                ""
+            ],
+            "description": "Adds state support",
+            "prefix": "oo_status"
+        },
+        "statusbar": {
+            "body": [
+                "",
+                " <field name=\"state\" widget=\"statusbar\" statusbar_visible=\"draft${0}\"/>",
+                ""
+            ],
+            "description": "Include module assets in backend views",
+            "prefix": "oo_statusbar"
+        },
+        "time/relativetime": {
+            "body": [
+                "",
+                "(DateTime.now() - relativedelta(${1:months=2})).strftime('${2:%Y-%m-%d}${3: }${4:%H:%M:%S}')${0}",
+                ""
+            ],
+            "description": "Fully formated time relative to now",
+            "prefix": "oo_time/relativetime"
+        },
+        "time/strftime": {
+            "body": [
+                "",
+                "strftime('${1:%Y-%m-%d}${2: }${3:%H:%M:%S}')${0}",
+                ""
+            ],
+            "description": "Fully formated strftime",
+            "prefix": "oo_time/strftime"
+        },
+        "view/full": {
+            "body": [
+                "",
+                "<!-- VIEWS: \"${1:Human readable name}\"",
+                "",
+                "    - Model\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${2:model}",
+                "    - _rec_name\u00b7\u00b7\u00b7\u00b7\u00b7: ${3:name}",
+                "    - Domain\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${4:[]}",
+                "    - Context\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${5:\\{\\}}",
+                "    - Parent menu \u00b7\u00b7: ${6:base.menu_custom}",
+                "    - View priority\u00b7: ${7:16}    ",
+                "    - Sequence\u00b7\u00b7\u00b7\u00b7..: ${8:10}",
+                "    - Action help\u00b7\u00b7\u00b7: ${9:Something about ${2/(.)/$1/g}}",
+                "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->",
+                "",
+                "<!-- Tree view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_tree\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.tree</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <field name=\"type\">tree</field>",
+                "    <field name=\"mode\">primary</field>",
+                "    <field name=\"priority\" eval=\"${7/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <tree string=\"${2/\\./\\_/g}_tree\" create=\"true\" delete=\"true\" edit=\"true\">",
+                "            <field name=\"${3/(.)/${1:/downcase}/g}\" />",
+                "",
+                "        </tree>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Form view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_form\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.form</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <field name=\"type\">form</field>",
+                "    <field name=\"mode\">primary</field>",
+                "    <field name=\"priority\" eval=\"${7/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <form string=\"${2/\\./\\_/g}_form\" create=\"true\" delete=\"true\" edit=\"true\">",
+                "            <header>",
+                "            </header>",
+                "            <sheet>",
+                "                <div class=\"oe_title\">",
+                "                    <label for=\"${3/(.)/${1:/downcase}/g}\" class=\"oe_edit_only\" />",
+                "                    <h1>",
+                "                        <field name=\"${3/(.)/${1:/downcase}/g}\" class=\"oe_inline\"",
+                "                            placeholder=\"${3/(.*?)_([a-zA-Z])/${1:/capitalize} ${2:/downcase}/g}\" />",
+                "                    </h1>",
+                "                </div>",
+                "                <group>",
+                "",
+                "                </group>",
+                "            </sheet>",
+                "        </form>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Search view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_search\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.search</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <field name=\"type\">search</field>",
+                "    <field name=\"mode\">primary</field>",
+                "    <field name=\"priority\" eval=\"${7/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <search string=\"${2/\\./\\_/g}_search\">",
+                "            <field name=\"${3/(.)/${1:/downcase}/g}\" />",
+                "            ",
+                "        </search>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Main window action for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"action_${2/(.*?)_([a-zA-Z])/${1:/downcase}_${2:/downcase}/g}_act_window\" model=\"ir.actions.act_window\">",
+                "    <field name=\"type\">ir.actions.act_window</field>",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"res_model\">${2/\\.+/\\./g}</field>",
+                "    <field name=\"view_mode\">tree,form</field>",
+                "    <field name=\"target\">current</field>",
+                "    <field name=\"domain\">${4/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"context\">${5/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"search_view_id\" ref=\"view_${2/\\./\\_/g}_search\" />",
+                "    <field name=\"help\" type=\"html\">",
+                "        <p class=\"oe_view_nocontent_create\">",
+                "            Click to add new ${1/(.)/${1:/downcase}/g}",
+                "        </p><p>",
+                "            ${9:Something about ${2/(.)/$1/g}}",
+                "        </p>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Main menu for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"menu_${2/(.*?)_([a-zA-Z])/${1:/downcase}_${2:/downcase}/g}\" model=\"ir.ui.menu\" >",
+                "    <field name=\"name\">${1/(.)/${1:/downcase}/g}</field>",
+                "    <field name=\"sequence\" eval=\"${8/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"action\" ref=\"action_${2/(.*?)_([a-zA-Z])/${1:/downcase}_${2:/downcase}/g}_act_window\" />",
+                "    <field name=\"parent_id\" ref=\"${6/(.)/${1:/downcase}/g}\" />",
+                "</record>",
+                ""
+            ],
+            "description": "Views: tree, form, search; act_window and menu",
+            "prefix": "oo_view/full"
+        },
+        "view/inherit": {
+            "body": [
+                "",
+                "<!--",
+                "",
+                "${1:Human readable name}",
+                "${1/./=/g}",
+                "",
+                "Inherited Views",
+                "",
+                "- - - - - - - - - ${2/((..)|(.))/(?2:-\\ )(?3:-)/g}",
+                "- Model\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${2:model}",
+                "- Base Module\u00b7\u00b7\u00b7: ${3:module_name}",
+                "- Mode\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${4:primary|extension}",
+                "- View priority\u00b7: ${5:16}",
+                "- - - - - - - - - ${2/((..)|(.))/(?2:-\\ )(?3:-)/g}",
+                "",
+                "-->",
+                "",
+                "<!-- ${4/(^.)/${1:/capitalize}/g} Inherited .:Tree:. view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_tree_inherited\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.tree inherited</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <!-- Please veryfiy, that the following inherited view really sticks to the naming convention. -->",
+                "    <field name=\"inherit_id\" ref=\"${3:module_name}.view_${2/\\./\\_/g}_tree\" />",
+                "    <field name=\"type\">tree</field>",
+                "    <field name=\"mode\">${4:primary}</field>",
+                "    <field name=\"priority\" eval=\"${5/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <xpath expr=\"//field[@name='${0:name}']\" position=\"after\">",
+                "            ",
+                "        </xpath>",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- ${4/(^.)/${1:/capitalize}/g} Inherited .:Form:. view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_form_inherited\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.form inherited</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <!-- Please veryfiy, that the following inherited view really sticks to the naming convention. -->",
+                "    <field name=\"inherit_id\" ref=\"${3:module_name}.view_${2/\\./\\_/g}_form\" />",
+                "    <field name=\"type\">form</field>",
+                "    <field name=\"mode\">${4:primary}</field>",
+                "    <field name=\"priority\" eval=\"${5/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <!-- ",
+                "        <xpath expr=\"//field[@name='${0:name}']\" position=\"after\">",
+                "            ",
+                "        </xpath>",
+                "         -->",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- ${4/(^.)/${1:/capitalize}/g} Inherited .:Search:. view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_search_inherited\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.search inherited</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <!-- Please veryfiy, that the following inherited view really sticks to the naming convention. -->",
+                "    <field name=\"inherit_id\" ref=\"${3:module_name}.view_${2/\\./\\_/g}_search\" />",
+                "    <field name=\"type\">search</field>",
+                "    <field name=\"mode\">${4:primary}</field>",
+                "    <field name=\"priority\" eval=\"${5/(.)/${1:/downcase}/g}\" />",
+                "    <field name=\"active\" eval=\"True\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        <!-- ",
+                "        <xpath expr=\"//field[@name='${0:name}']\" position=\"after\">",
+                "            ",
+                "        </xpath>",
+                "        -->",
+                "    </field>",
+                "</record>",
+                ""
+            ],
+            "description": "Inherited Views: tree, form, search",
+            "prefix": "oo_view/inherit"
+        },
+        "view/inherit1": {
+            "body": [
+                "",
+                "<!-- VIEWS: \"${1:Human readable name}\"",
+                "",
+                "    - Model\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7: ${2:model}",
+                "    - Base Addons\u00b7\u00b7\u00b7: ${3:base}    ",
+                "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->",
+                "",
+                "<!-- Tree view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_tree\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.tree</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "    <field name=\"inherit_id\" ref=\"${3}.view_${2/\\./\\_/g}_tree\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        ${0}",
+                "    </field>",
+                "</record>",
+                "",
+                "<!-- Form view for \"${2/(.)/${1:/downcase}/g}\" -->",
+                "<record id=\"view_${2/\\./\\_/g}_form\" model=\"ir.ui.view\">",
+                "    <field name=\"name\">view.${2/\\.+/\\./g}.form</field>",
+                "    <field name=\"model\">${2/\\.+/\\./g}</field>",
+                "     <field name=\"inherit_id\" ref=\"${3}.view_${2/\\./\\_/g}_form\" />",
+                "    <field name=\"arch\" type=\"xml\">",
+                "        ${0}",
+                "    </field>",
+                "</record>",
+                "",
+                ""
+            ],
+            "description": "Inherited Views: tree, form",
+            "prefix": "oo_view/inherit"
+        },
+        "widget/ace": {
+            "body": [
+                "",
+                "widget=\"${1:ace}\"",
+                ""
+            ],
+            "description": "widget ace editor",
+            "prefix": "oo_widget/ace"
+        },
+        "widget/boolean_button": {
+            "body": [
+                "",
+                "widget=\"${1:boolean_button}\"",
+                ""
+            ],
+            "description": "widget boolean_button",
+            "prefix": "oo_widget/boolean_button"
+        },
+        "widget/image": {
+            "body": [
+                "",
+                "widget=\"${1:image}\"",
+                ""
+            ],
+            "description": "widget image",
+            "prefix": "oo_widget/image"
+        },
+        "widget/image1": {
+            "body": [
+                "",
+                "widget=\"${1:image}\"",
+                ""
+            ],
+            "description": "widget image",
+            "prefix": "oo_widget/image"
+        },
+        "widget/many2many": {
+            "body": [
+                "",
+                "widget=\"${1:many2many}\"",
+                ""
+            ],
+            "description": "widget many2many",
+            "prefix": "oo_widget/many2many"
+        },
+        "widget/many2many_binary": {
+            "body": [
+                "",
+                "widget=\"${1:many2many_binary}\"",
+                ""
+            ],
+            "description": "widget many2many_binary",
+            "prefix": "oo_widget/many2many_binary"
+        },
+        "widget/many2many_checkboxes": {
+            "body": [
+                "",
+                "widget=\"${1:many2many_checkboxes}\"",
+                ""
+            ],
+            "description": "widget many2many_checkboxes",
+            "prefix": "oo_widget/many2many_checkboxes"
+        },
+        "widget/many2many_kanban": {
+            "body": [
+                "",
+                "widget=\"${1:many2many_kanban}\"",
+                ""
+            ],
+            "description": "widget many2many_kanban",
+            "prefix": "oo_widget/many2many_kanban"
+        },
+        "widget/many2many_tags": {
+            "body": [
+                "",
+                "widget=\"${1:many2many_tags}\"",
+                ""
+            ],
+            "description": "widget many2many_tags",
+            "prefix": "oo_widget/many2many_tags"
+        },
+        "widget/percentpie": {
+            "body": [
+                "",
+                "widget=\"${1:percentpie}\"",
+                ""
+            ],
+            "description": "widget percentpie",
+            "prefix": "oo_widget/percentpie"
+        },
+        "widget/progressbar": {
+            "body": [
+                "",
+                "widget=\"${1:progressbar}\"",
+                ""
+            ],
+            "description": "widget progressbar",
+            "prefix": "oo_widget/progressbar"
+        },
+        "widget/radio": {
+            "body": [
+                "",
+                "widget=\"${1:radio}\"",
+                ""
+            ],
+            "description": "widget radio",
+            "prefix": "oo_widget/radio"
+        },
+        "widget/selection": {
+            "body": [
+                "",
+                "widget=\"${1:selection}\"",
+                ""
+            ],
+            "description": "widget selection",
+            "prefix": "oo_widget/selection"
+        },
+        "widget/statinfo": {
+            "body": [
+                "",
+                "widget=\"${1:statinfo}\"",
+                ""
+            ],
+            "description": "widget statinfo",
+            "prefix": "oo_widget/statinfo"
+        },
+        "widget/statusbar": {
+            "body": [
+                "",
+                "widget=\"${1:statusbar}\"",
+                ""
+            ],
+            "description": "widget statusbar",
+            "prefix": "oo_widget/statusbar"
+        },
+        "widget/toggle_button": {
+            "body": [
+                "",
+                "widget=\"${1:toggle_button}\"",
+                ""
+            ],
+            "description": "widget toggle_button",
+            "prefix": "oo_widget/toggle_button"
+        },
+        "xpath": {
+            "body": [
+                "",
+                "<xpath expr=\"${1://field[@name='name']}\" position=\"${2:|after,before,replace,attributes|}\">",
+                "    ${0}",
+                "</xpath>",
+                ""
+            ],
+            "description": "Common xpath tag to be added inside a ir.ui.view",
+            "prefix": "oo_xpath"
+        }
+    }
+}
