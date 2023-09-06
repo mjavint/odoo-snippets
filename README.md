@@ -1,53 +1,26 @@
-# odoo-snippets README
+# Odoo 16+ Snippets
 
-Snippets Odoo 16 +
-
-- Python Odoo Snippets
+Powerful snippets to improve productivity in the Python Framework, Odoo Javascript and also in the QWeb template engine
 
 ## Features
 
-Snippets Odoo 16 +
-
 - Python Odoo Snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![Python Odoo](/src/images/model.gif)
 
-## Requirements
+- XML and Qweb Odoo Snippets
+- Javascript OWL Snippets
+- CSV Odoo Snippets
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+> Note: The use of snippets for day to day is highly recommended to improve productivity and agility when writing code.
 
-## Extension Settings
+## How to install
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+1. Install the extension from the url https://marketplace.visualstudio.com/items?itemName=mjavint.mjavint-odoo-snippets&ssr=false#overview or from vscode itself.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.1
-
-Added features X, Y, and Z.
-
----
+You can report an issue through https://github.com/mjavint/odoo-snippets/issues
 
 ## Working with Markdown
 

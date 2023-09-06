@@ -2,7 +2,7 @@
   "name": "mjavint-odoo-snippets",
   "displayName": "Odoo 16+ Snippets",
   "description": "Odoo 16+ Snippets",
-  "icon": "images/odoo.png",
+  "icon": "src/icon/odoo.png",
   "version": "1.1.1",
   "engines": {
     "vscode": "^1.81.0"
@@ -24,23 +24,19 @@
     "snippets": [
       {
         "language": "python",
-        "path": "./snippets/python.code-snippets"
+        "path": "./snippets/py-snippets.json"
       },
       {
         "language": "xml",
-        "path": "./snippets/xml.code-snippets"
+        "path": "./snippets/xml-snippets.json"
       },
       {
         "language": "csv",
-        "path": "./snippets/csv.code-snippets"
+        "path": "./snippets/csv-snippets.json"
       },
       {
-        "language": "javascript,typescript",
-        "path": "./snippets/js.code-snippets"
-      },
-      {
-        "language": "python,xml",
-        "path": "./snippets/multi.code-snippets"
+        "language": "javascript",
+        "path": "./snippets/js-snippets.json"
       }
     ]
   },

@@ -1,5 +1,4 @@
 {
-    // File
     "Manifest": {
         "prefix": "manifest",
         "body": [
@@ -53,7 +52,7 @@
             "${0}",
             ""
         ],
-        "description": "Copyright",
+        "description": "Copyright"
     },
     "File __init__": {
         "prefix": "ooinit",
@@ -64,7 +63,7 @@
             "from . import ${1:models}${0}",
             ""
         ],
-        "description": "__init__ file",
+        "description": "__init__ file"
     },
     "File coding": {
         "prefix": "oocoding",
@@ -74,12 +73,12 @@
             "${0}",
             ""
         ],
-        "description": "utf-8 coding",
+        "description": "utf-8 coding"
     },
     "Import": {
         "prefix": "imo",
         "body": [
-            "from odoo import _, api, fields, models",
+            "from odoo import models, fields, api, _",
             "\n"
         ],
         "description": "Import Odoo Model/Fields/API"
@@ -108,9 +107,12 @@
     "Model": {
         "prefix": "oomodel",
         "body": [
-            "class ${30:${20/([a-z]+)[\\._]?/${1:/capitalize}/g}}(models.${40|Model,AbstractModel,TransientModel|}):",
-            "\t${10|_name,_inherit|} = '${20:model.technical.name}'",
-            "\t_description = '${50:${20/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}}'",
+            "from odoo import models, fields, api, _",
+            "",
+            "",
+            "class ${20/([a-z]+)[\\._]?/${1:/capitalize}/g}(models.${30|Model,AbstractModel,TransientModel|}):",
+            "\t${10|_name,_inherit|} = '${20:model.name}'",
+            "\t_description = _('${50:${20/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}}')",
             "\t"
         ],
         "description": "Add model"
@@ -141,7 +143,7 @@
             "\tpass${0}",
             ""
         ],
-        "description": "Odoo web controller route",
+        "description": "Odoo web controller route"
     },
     "Constrains method": {
         "prefix": "oomconstrains",
@@ -162,7 +164,6 @@
         ],
         "description": "SQL Constraints"
     },
-    // Basic Fields
     "Boolean field": {
         "prefix": "oofboolean",
         "body": [
@@ -191,7 +192,6 @@
         ],
         "description": "Integer field"
     },
-    // Advanced Fields
     "Binary field": {
         "prefix": "oofbinary",
         "body": [
@@ -229,7 +229,7 @@
             "\t\t('valor1', 'valor1'),",
             "\t\t('valor2', 'valor2'),",
             "\t],",
-            ")${0}",
+            ")${0}"
         ],
         "description": "Selection field"
     },
@@ -247,7 +247,6 @@
         ],
         "description": "Attachment field"
     },
-    // Date(time) Fields
     "Date field": {
         "prefix": "oofdate",
         "body": [
@@ -293,7 +292,7 @@
             "@api.depends('${3:depends}')",
             "def _compute_${1:field_name}(self):",
             "\tfor record in self:",
-            "\t\trecord.${1:field_name} = ${4:something}",
+            "\t\trecord.${1:field_name} = ${4:something}"
         ],
         "description": "Compute Field"
     },
@@ -315,11 +314,10 @@
             "",
             "def _inverse_${1:field_name}(self):",
             "\tfor record in self:",
-            "\t\t${5:...}",
+            "\t\t${5:...}"
         ],
         "description": "Full Compute with Inverse"
     },
-    // Relational Fields
     "Many2one field": {
         "prefix": "oofm2o",
         "body": [
@@ -354,7 +352,6 @@
         ],
         "description": "One2many field"
     },
-    // Methods
     "Onchange method": {
         "prefix": "oomonchange",
         "body": [
@@ -377,7 +374,7 @@
             "\t\t\t'domain': {",
             "\t\t\t'${2:field_name}': ${6:[('${3:field_name}', '${4:=}', ${5:self.${1}})]}",
             "\t\t}",
-            "\t}${0}",
+            "\t}${0}"
         ],
         "description": "_onchange method signature, domain"
     },
@@ -395,7 +392,7 @@
             "\t}${0}",
             ""
         ],
-        "description": "_onchange method signature, warning",
+        "description": "_onchange method signature, warning"
     },
     "Override": {
         "prefix": "oooverride",
@@ -434,38 +431,28 @@
         ],
         "description": "Unlink Method"
     },
-    // Features
     "status": {
         "prefix": "oostatus",
         "body": [
             "state = fields.Selection(",
-            "\tstring='State',",
+            "\tstring=_('State'),",
             "\tselection=[",
-            "\t\t('draft', 'Draft'),",
-            "\t\t('confirmed', 'Confirmed'),",
-            "\t\t('close', 'Close'),",
-            "\t\t('cancel', 'Cancel'),",
+            "\t\t('${1:default}', _('${1/(.*)/${1:/capitalize}/}')),",
+            "\t\t('${2}', _('${2}')),",
+            "\t\t('${3}', _('${3}')),",
             "\t],",
-            "\tdefault='draft',",
-            "\treadonly=True,",
+            "\tdefault='${1:default}',",
             ")",
             "",
+            "def action_${1:default}(self):",
+            "\tself.write({'state': '${1:default}'})",
             "",
-            "def action_confirm(self):",
-            "\tself.write({'state': 'confirmed'})",
+            "def action_${2}(self):",
+            "\tself.write({'state': '${2}'})",
             "",
-            "",
-            "def action_draft(self):",
-            "\tself.write({'state': 'draft'})",
-            "",
-            "",
-            "def action_cancel(self):",
-            "\tself.write({'state': 'cancel'})",
-            "",
-            "",
-            "def action_close(self):",
-            "\tself.write({'state': 'close'})",
-            ""
+            "def action_${3}(self):",
+            "\tself.write({'state': '${3}'})",
+            "${0}"
         ],
         "description": "status feature"
     },
@@ -476,7 +463,6 @@
         ],
         "description": "Mail thread support feature"
     },
-    // Miscellaneous
     "related": {
         "prefix": "related",
         "body": [
@@ -540,7 +526,7 @@
             "domain=[('${1}','${2|=, !=,in,not in, like, ilike, child_of, parent_of|}', ${3})]${0}",
             ""
         ],
-        "description": "Field attribute: domain",
+        "description": "Field attribute: domain"
     },
     "Domain lambda": {
         "prefix": "oodomain",
@@ -549,7 +535,7 @@
             "domain=lambda self: self._get_${1:field}_domain()",
             ""
         ],
-        "description": "Field attribute: domain lambda",
+        "description": "Field attribute: domain lambda"
     },
     "Company asociated": {
         "prefix": "oocompany",
@@ -563,7 +549,7 @@
             ")",
             ""
         ],
-        "description": "Company asociated",
+        "description": "Company asociated"
     },
     "User asociated": {
         "prefix": "oouser",
@@ -577,7 +563,7 @@
             ")",
             ""
         ],
-        "description": "User asociated",
+        "description": "User asociated"
     },
     "Partner asociated": {
         "prefix": "oopartner",
@@ -590,7 +576,7 @@
             ")",
             ""
         ],
-        "description": "Partner asociated",
+        "description": "Partner asociated"
     },
     "Import datetime": {
         "prefix": "ooimdate",
@@ -603,7 +589,7 @@
             "${0}",
             ""
         ],
-        "description": "import date and time tools",
+        "description": "import date and time tools"
     },
     "Return act_window": {
         "prefix": "ooractionwindow",
@@ -618,7 +604,7 @@
             "}${0}",
             ""
         ],
-        "description": "Return act_window",
+        "description": "Return act_window"
     },
     "Return act_window_close": {
         "prefix": "ooractionclose",
@@ -627,7 +613,7 @@
             "return {'type': 'ir.actions.act_window_close'${0}",
             ""
         ],
-        "description": "Return act_window_close",
+        "description": "Return act_window_close"
     },
     "selection_add": {
         "prefix": "ooselectionadd",
@@ -636,9 +622,8 @@
             "selection_add=[('${1:draft}', ${1/(.*)/${1:/capitalize}/})${0}]",
             ""
         ],
-        "description": "Field attribute: selection_add ",
+        "description": "Field attribute: selection_add "
     },
-    // x2m Operations
     "x2m create": {
         "prefix": "oox2mcreate",
         "body": [
@@ -646,7 +631,7 @@
             "(0, 0, ${1:{values}})",
             ""
         ],
-        "description": "x2m create",
+        "description": "x2m create"
     },
     "x2m delete": {
         "prefix": "oox2mdelete",
@@ -655,7 +640,7 @@
             "(2, ${1:id}, 0)",
             ""
         ],
-        "description": "x2m delete, don't use in create()",
+        "description": "x2m delete, don't use in create()"
     },
     "x2m link": {
         "prefix": "oox2mlink",
@@ -664,7 +649,7 @@
             "(4, ${1:id}, 0)",
             ""
         ],
-        "description": "x2m link, don't use in One2many",
+        "description": "x2m link, don't use in One2many"
     },
     "x2m replace": {
         "prefix": "oox2mreplace",
@@ -673,7 +658,7 @@
             "(6, 0, ${1:ids)",
             ""
         ],
-        "description": "x2m replace, don't use in create() and One2many",
+        "description": "x2m replace, don't use in create() and One2many"
     },
     "x2m unlink": {
         "prefix": "oox2munlink",
@@ -682,7 +667,7 @@
             "(3, ${1:id}, 0)",
             ""
         ],
-        "description": "x2m unlink, don't use in create()",
+        "description": "x2m unlink, don't use in create()"
     },
     "x2m unlink_all": {
         "prefix": "oox2munlink_all",
@@ -691,7 +676,7 @@
             "(5, 0, 0)",
             ""
         ],
-        "description": "x2m unlink all, don't use in create()",
+        "description": "x2m unlink all, don't use in create()"
     },
     "x2m update": {
         "prefix": "oox2mupdate",
@@ -700,6 +685,21 @@
             "(1, ${1:id}, ${2:{values}})",
             ""
         ],
-        "description": "x2m update, don't use in create()",
+        "description": "x2m update, don't use in create()"
+    },
+    "Domain Leaf": {
+        "scope": "python,xml",
+        "prefix": "ooleaf",
+        "body": [
+            "('${1:field_name}', '${2|=,!=,<=,<,>,>=,=?,=like,=ilike,like,not like,ilike,not ilike,in,not in,child_of,parent_of,inselect,not inselect|}', ${3:value})"
+        ],
+        "description": "Domain Leaf"
+    },
+    "Attributes": {
+        "prefix": "ooattributes",
+        "body": [
+            "${1|invisible,readonly,required|}=\"${2|1,0|}\""
+        ],
+        "description": "Attributes"
     }
 }

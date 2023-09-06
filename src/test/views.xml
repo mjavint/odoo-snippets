@@ -1,0 +1,3 @@
+"<xpath expr=\"${1:expr}\" position=\"${2|inside,after,before,replace,move|}\">",
+"    ${0}",
+"</xpath>"

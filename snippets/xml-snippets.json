@@ -1,0 +1,599 @@
+{
+    "View Full": {
+        "prefix": "oovfull",
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<odoo>",
+            "    <data>",
+            "",
+            "        <record id=\"view_${1:model_name}_form\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.form</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <form string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <sheet>",
+            "                        <div class=\"oe_title\">",
+            "                            <label for=\"example_title\"/>",
+            "                            <h1>",
+            "                                <field name=\"example_title\" placeholder=\"Title\"/>",
+            "                            </h1>",
+            "                        </div>",
+            "                        <group>",
+            "                            <group>",
+            "                                <field name=\"create_date\" />",
+            "                            </group>",
+            "                            <group>",
+            "                                <field name=\"example_field\"/>",
+            "                            </group>",
+            "                        </group>",
+            "                    </sheet>",
+            "                </form>",
+            "            </field>",
+            "        </record>",
+            "",
+            "        <record id=\"view_${1:model_name}_tree\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.tree</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <tree string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <field name=\"create_date\"/>",
+            "                    <field name=\"example_field\"/>",
+            "                </tree>",
+            "            </field>",
+            "        </record>",
+            "",
+            "        <record id=\"view_${1:model_name}_search_view\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <search string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <group expand=\"1\" string=\"Group By\">",
+            "                        <filter string=\"Example Field\" name=\"example_field\" domain=\"[]\" context=\"{'group_by':'example_field'}\"/>",
+            "                    </group>",
+            "                </search>",
+            "            </field>",
+            "        </record>",
+            "",
+            "        <record id=\"action_${1:model_name}\" model=\"ir.actions.act_window\">",
+            "            <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "            <field name=\"type\">ir.actions.act_window</field>",
+            "            <field name=\"res_model\">${1/_/./g}</field>",
+            "            <field name=\"view_mode\">tree,form</field>",
+            "            <field name=\"domain\">[]</field>",
+            "            <field name=\"context\">{}</field>",
+            "            <field name=\"help\" type=\"html\">",
+            "                <p class=\"oe_view_nocontent_create\">",
+            "                    There is no examples click here to add new ${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}.",
+            "                </p>",
+            "            </field>",
+            "        </record>",
+            "",
+            "        <menuitem name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" id=\"menu_${1:model_name}\" parent=\"${30:menu_parent_id}\" action=\"action_${1:model_name}\"/>",
+            "",
+            "    </data>",
+            "</odoo>",
+            ""
+        ],
+        "description": "View Full (Views Tree/Form/Search, Action and Menu)"
+    },
+    "View Form": {
+        "prefix": "oovform",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_form\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.form</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <form string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <sheet>",
+            "                        <div class=\"oe_title\">",
+            "                            <label for=\"example_title\"/>",
+            "                            <h1>",
+            "                                <field name=\"example_title\" placeholder=\"Title\"/>",
+            "                            </h1>",
+            "                        </div>",
+            "                        <group>",
+            "                            <group>",
+            "                                <field name=\"create_date\" />",
+            "                            </group>",
+            "                            <group>",
+            "                                <field name=\"example_field\"/>",
+            "                            </group>",
+            "                        </group>",
+            "                    </sheet>",
+            "                </form>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Form"
+    },
+    "View Tree": {
+        "prefix": "oovtree",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_tree\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.tree</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <tree string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <field name=\"create_date\"/>",
+            "                    <field name=\"example_field\"/>",
+            "                </tree>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Tree"
+    },
+    "View Kanban": {
+        "prefix": "oovkanban",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_kanban\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.kanban</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <kanban>",
+            "                   <templates>",
+            "                       <t t-name=\"kanban-box\">",
+            "",
+            "                       </t>",
+            "                   </templates>",
+            "               </kanban>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Kanban"
+    },
+    "View Search": {
+        "prefix": "oovsearch",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "                <search string=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\">",
+            "                    <group expand=\"1\" string=\"Group By\">",
+            "                        <filter string=\"${4:}\" name=\"${3:field_name}\" domain=\"[]\" context=\"{'group_by':'${3:field_name}'}\"/>",
+            "                    </group>",
+            "                </search>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Search"
+    },
+    "View Pivot": {
+        "prefix": "oovpivot",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <pivot string=\"${2}\" disable_linking=\"${3|true,false|}\">",
+            "",
+            "               </pivot>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Pivot"
+    },
+    "View Gantt": {
+        "prefix": "oovgantt",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <gantt string=\"${2}\" date_start=\"${3:date_start_field}\" date_stop=\"${4:date_stop_field}\">",
+            "",
+            "               </gantt>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Gantt"
+    },
+    "View Cohort": {
+        "prefix": "oovgantt",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <cohort string=\"${2}\" date_start=\"${3:date_start_field}\" date_stop=\"${4:date_stop_field}\">",
+            "",
+            "               </cohort>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Cohort"
+    },
+    "View Calendar": {
+        "prefix": "oovgantt",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <calendar string=\"${2}\" date_start=\"${3:date_start_field}\" date_stop=\"${4:date_stop_field}\">",
+            "",
+            "               </calendar>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Calendar"
+    },
+    "View Graph": {
+        "prefix": "oovgraph",
+        "body": [
+            "",
+            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "            <field name=\"model\">${1/_/./g}</field>",
+            "            <field name=\"arch\" type=\"xml\">",
+            "               <graph string=\"${2}\" type=\"${3|bar,line,pie|}\">",
+            "",
+            "               </graph>",
+            "            </field>",
+            "        </record>",
+            "${0}"
+        ],
+        "description": "View Graph"
+    },
+    "Odoo data": {
+        "prefix": "oodata",
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<odoo>",
+            "    <data>",
+            "",
+            "        ${0}",
+            "",
+            "    </data>",
+            "</odoo>",
+            ""
+        ],
+        "description": "Odoo data"
+    },
+    "Data noupdate": {
+        "prefix": "oonoupdate",
+        "body": [
+            "noupdate=\"${1|0,1|}\""
+        ],
+        "description": "Data noupdate"
+    },
+    "Action Windows": {
+        "prefix": "ooawindow",
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<odoo>",
+            "    <data>",
+            "",
+            "        <record id=\"action_${1:model_name}\" model=\"ir.actions.act_window\">",
+            "            <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "            <field name=\"type\">ir.actions.act_window</field>",
+            "            <field name=\"res_model\">${1/_/./g}</field>",
+            "            <field name=\"view_mode\">tree,form</field>",
+            "            <field name=\"domain\">[]</field>",
+            "            <field name=\"context\">{}</field>",
+            "            <field name=\"help\" type=\"html\">",
+            "                <p class=\"oe_view_nocontent_create\">",
+            "                    There is no examples click here to add new ${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}.",
+            "                </p>",
+            "            </field>",
+            "        </record>",
+            "",
+            "        <menuitem name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" id=\"menu_${1:model_name}\" parent=\"${30:menu_parent_id}\" action=\"action_${1:model_name}\"/>",
+            "",
+            "    </data>",
+            "</odoo>",
+            ""
+        ],
+        "description": "Action Windows with Menu"
+    },
+    "Action Server": {
+        "prefix": "ooaserver",
+        "body": [
+            "<record id=\"action_${1:model_name}_server\" model=\"ir.actions.server\">",
+            "    <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "    <field name=\"model_id\" ref=\"model_${1:model_name}\"/>",
+            "    <field name=\"binding_model_id\" ref=\"model_${3:binding_model_name}\"/>",
+            "    <field name=\"state\">${4|code,object_create,object_write,multi|}</field>",
+            "    <field name=\"code\">",
+            "        if record.some_condition():",
+            "            action = {",
+            "                \"type\": \"ir.actions.act_window\",",
+            "                \"view_mode\": \"form\",",
+            "                \"res_model\": record._name,",
+            "                \"res_id\": record.id,",
+            "            }",
+            "    </field>",
+            "</record>",
+            "${0}"
+        ],
+        "description": "Action Server"
+    },
+    "Action Client": {
+        "prefix": "ooaclient",
+        "body": [
+            "<record id=\"action_${1:model_name}_client\" model=\"ir.actions.client\">",
+            "    <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "    <field name=\"tag\">${3:tag_name}</field>",
+            "    <field name=\"target\">${4|main,fullscreen,new|}</field>",
+            "</record>",
+            "${0}"
+        ],
+        "description": "Action Client"
+    },
+    "Action Url": {
+        "prefix": "ooaurl",
+        "body": [
+            "<record id=\"action_${1:action_name}_url\" model=\"ir.actions.act_url\">",
+            "    <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "    <field name=\"url\">${3:url}</field>",
+            "    <field name=\"target\">${4|new,self|}</field>",
+            "</record>",
+            "${0}"
+        ],
+        "description": "Action Url"
+    },
+    "Action Report": {
+        "prefix": "ooreport",
+        "body": [
+            "<record id=\"report_${1:model_name}\" model=\"ir.actions.report\">",
+            "    <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
+            "    <field name=\"model\">${1/_/./g}</field>",
+            "    <field name=\"report_type\">qweb-${3|pdf,html|}</field>",
+            "    <field name=\"report_name\">report_${1:model_name}_view</field>",
+            "    <field name=\"report_file\">report_${1:model_name}</field>",
+            "    <field name=\"print_report_name\">'%s' % object.name</field>",
+            "    <field name=\"binding_model_id\" ref=\"model_${4:model_binding_name}\"/>",
+            "    <field name=\"binding_type\">report</field>",
+            "</record>",
+            "",
+            "<template id=\"report_${1:model_name}_view\">",
+            "    <t t-call=\"web.html_container\">",
+            "        <t t-foreach=\"docs\" t-as=\"doc\">",
+            "            <t t-call=\"web.external_layout\">",
+            "                <div class=\"page\">",
+            "                   <h2>Report title</h2>",
+            "                   <p>This object's name is <span t-field=\"o.name\"/></p>",
+            "                </div>",
+            "            </t>",
+            "        </t>",
+            "    </t>",
+            "</template>",
+            "${0}"
+        ],
+        "description": "Report"
+    },
+    "Report Paperformat": {
+        "prefix": "oopaper",
+        "body": [
+            "<record id=\"paperformat_${1|Legal,Letter,Tabloid,custom,A1,A2,A3,A4,A5,A6,A7,A8,A9,B0,B1,B2,B3,B4,B5,B6,B7,B8,B9,B10|}\" model=\"report.paperformat\">",
+            "    <field name=\"name\">${3:Paper Name}</field>",
+            "    <field name=\"default\" eval=\"True\"/>",
+            "    <field name=\"format\">${1}</field>",
+            "    <field name=\"page_height\">80</field>",
+            "    <field name=\"page_width\">175</field>",
+            "    <field name=\"orientation\">${2|Portrait,Landscape|}</field>",
+            "    <field name=\"margin_top\">3</field>",
+            "    <field name=\"margin_bottom\">3</field>",
+            "    <field name=\"margin_left\">3</field>",
+            "    <field name=\"margin_right\">3</field>",
+            "    <field name=\"header_line\" eval=\"False\"/>",
+            "    <field name=\"header_spacing\">3</field>",
+            "    <field name=\"dpi\">80</field>",
+            "</record>",
+            "${0}"
+        ],
+        "description": "Report Paperformat"
+    },
+    "Notebook": {
+        "prefix": "oonotebook",
+        "body": [
+            "<notebook>",
+            "    <page name=\"${1:name}\" string=\"${2:String}\">",
+            "        ${0}",
+            "    </page>",
+            "</notebook>"
+        ],
+        "description": "Notebook"
+    },
+    "Page": {
+        "prefix": "oopage",
+        "body": [
+            "    <page name=\"${1:name}\" string=\"${2:String}\">",
+            "        ${0}",
+            "    </page>"
+        ],
+        "description": "Page"
+    },
+    "Group 2 Column": {
+        "prefix": "oogroup2",
+        "body": [
+            "<group>",
+            "    <group>",
+            "        ${0}",
+            "    </group>",
+            "    <group>",
+            "",
+            "    </group>",
+            "",
+            "</group>"
+        ],
+        "description": "Group 2 Column"
+    },
+    "Group 1 Column": {
+        "prefix": "oogroup",
+        "body": [
+            "<group>",
+            "   ${0}",
+            "</group>"
+        ],
+        "description": "Group 1 Column"
+    },
+    "Menu Root": {
+        "prefix": "oomroot",
+        "body": [
+            "<menuitem id=\"menu_${1:name}_root\" name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" />"
+        ],
+        "description": "Menu Root"
+    },
+    "Menu Category": {
+        "prefix": "oomcategory",
+        "body": [
+            "<menuitem id=\"menu_${1:name}\" name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" parent=\"${3}\" sequence=\"10\"/>"
+        ],
+        "description": "Menu Category"
+    },
+    "Menu Action": {
+        "prefix": "oomaction",
+        "body": [
+            "<menuitem id=\"menu_${1}\" name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" parent=\"${3}\" action=\"${1:action_name}\" sequence=\"11\"/>"
+        ],
+        "description": "Menu Action"
+    },
+    "Attributes": {
+        "prefix": "ooattributes",
+        "body": [
+            "${1|invisible,readonly,required|}=\"${2|1,0|}\""
+        ],
+        "description": "Attributes"
+    },
+    "Attrs": {
+        "prefix": "ooattrs",
+        "body": [
+            "attrs=\"{'${1|invisible,readonly,required|}': [('${2:field_name}', '${3|=,!=,<=,<,>,>=,=?,=like,=ilike,like,not like,ilike,not ilike,in,not in,child_of,parent_of,inselect,not inselect|}', ${4:value})]}\""
+        ],
+        "description": "Attrs"
+    },
+    "Widgets": {
+        "prefix": "oowidgets",
+        "body": [
+            "widget=\"${1|selection,boolean_toggle,radio,handle,one2many_list,many2many_tags,many2many_binary,many2many_kanban,many2many_checkboxes,email,url,boolean_button,float_time,date,integer,image,html,html_frame,priority,statusbar,porcentpie,guage,progressbar,followers,char_domain,statinfo|}\""
+        ],
+        "description": "Widgets"
+    },
+    "Options": {
+        "prefix": "oooptions",
+        "body": [
+            "options=\"{'${1|no_quick_create,no_create_edit,no_create,no_open,always_reload,color_field,currency_field,limit|}'}\""
+        ],
+        "description": "Options"
+    },
+    "Field Autoclose": {
+        "prefix": "oofa",
+        "body": [
+            "<field name=\"${0}\"/>"
+        ],
+        "description": "Field Autoclose"
+    },
+    "Tree Editable": {
+        "prefix": "ootedit",
+        "body": [
+            "<field name=\"${1:name}\" >",
+            "    <tree create=\"${2|true,false|}\" delete=\"${3|true,false|}\" edit=\"${4|true,false|}\" editable=\"${5|bottom,top|}\">",
+            "        ${0}",
+            "    </tree>",
+            "</field>"
+        ],
+        "description": "Tree Editable"
+    },
+    "Qweb t-att-*": {
+        "prefix": "ooqatt",
+        "body": [
+            "t-att-${1:att_name}=\"${2:value}\""
+        ],
+        "description": "Qweb t-att-*"
+    },
+    "Qweb t-foreach": {
+        "prefix": "ooqfor",
+        "body": [
+            "<t t-foreach=\"${1:data}s\" t-as=\"${1}\">",
+            "    ${0}",
+            "</t>"
+        ],
+        "description": "Qweb t-foreach"
+    },
+    "Qweb t-if | elif| else": {
+        "prefix": "ooqif",
+        "body": [
+            "<t t-if=\"condition\">",
+            "    ${0}",
+            "</t>",
+            "<t t-elif=\"condition\">",
+            "</t>",
+            "<t t-else=\"\">",
+            "</t>"
+        ],
+        "description": "Qweb t-if | elif| else"
+    },
+    "Qweb t-set t-value": {
+        "prefix": "ooqset",
+        "body": [
+            "<t t-set=\"${1:var}\" t-value=\"${2:value}\"/>"
+        ],
+        "description": "Qweb t-set t-value"
+    },
+    "Qweb t-field": {
+        "prefix": "ooqfield",
+        "body": [
+            "<t t-field=\"${1:field_name}\"/>"
+        ],
+        "description": "Qweb t-field"
+    },
+    "Xpath position": {
+        "prefix": "ooxp",
+        "body": [
+            "<xpath expr=\"${1:expr}\" position=\"${2|inside,after,before,replace,move|}\">",
+            "    ${0}",
+            "</xpath>"
+        ],
+        "description": "Xpath position"
+    },
+    "Xpath attributes": {
+        "prefix": "ooxa",
+        "body": [
+            "<xpath expr=\"${1:expr}\" position=\"attributes\">",
+            "    <attribute name=\"${2:attribute}\">${3:attribute_value}</attribute>",
+            "</xpath>"
+        ],
+        "description": "Xpath attributes"
+    },
+    "Xpath field": {
+        "prefix": "ooxf",
+        "body": [
+            "<field name=\"${1:field_name}\" position=\"${2|inside,after,before,replace,move,attributes|}\">",
+            "    ${0}",
+            "</field>"
+        ],
+        "description": "Xpath field"
+    },
+    "Domain Leaf": {
+        "scope": "python,xml",
+        "prefix": "ooleaf",
+        "body": [
+            "('${1:field_name}', '${2|=,!=,<=,<,>,>=,=?,=like,=ilike,like,not like,ilike,not ilike,in,not in,child_of,parent_of,inselect,not inselect|}', ${3:value})"
+        ],
+        "description": "Domain Leaf"
+    },
+    "Attributes": {
+        "prefix": "ooattributes",
+        "body": [
+            "${1|invisible,readonly,required|}=\"${2|1,0|}\""
+        ],
+        "description": "Attributes"
+    }
+}
