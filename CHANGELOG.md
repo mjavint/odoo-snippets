@@ -1,5 +1,9 @@
 # Change Log
 
+### Version 1.2.3
+
+- Added new snippets for OWL
+
 ### Version 1.2.2
 
 - The snippets of the cohort, gantt and calendar views were rectified
