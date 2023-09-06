@@ -349,7 +349,7 @@
         "description": "Action Url"
     },
     "Action Report": {
-        "prefix": "ooreport",
+        "prefix": "ooareport",
         "body": [
             "<record id=\"report_${1:model_name}\" model=\"ir.actions.report\">",
             "    <field name=\"name\">${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}</field>",
@@ -421,7 +421,7 @@
         "description": "Page"
     },
     "Group 2 Column": {
-        "prefix": "oogroup2",
+        "prefix": "oogroup",
         "body": [
             "<group>",
             "    <group>",
@@ -464,13 +464,6 @@
             "<menuitem id=\"menu_${1}\" name=\"${1/([a-z]+)([\\._]?)/${1:/capitalize}${2:+ }/g}\" parent=\"${3}\" action=\"${1:action_name}\" sequence=\"11\"/>"
         ],
         "description": "Menu Action"
-    },
-    "Attributes": {
-        "prefix": "ooattributes",
-        "body": [
-            "${1|invisible,readonly,required|}=\"${2|1,0|}\""
-        ],
-        "description": "Attributes"
     },
     "Attrs": {
         "prefix": "ooattrs",
@@ -580,20 +573,5 @@
             "</field>"
         ],
         "description": "Xpath field"
-    },
-    "Domain Leaf": {
-        "scope": "python,xml",
-        "prefix": "ooleaf",
-        "body": [
-            "('${1:field_name}', '${2|=,!=,<=,<,>,>=,=?,=like,=ilike,like,not like,ilike,not ilike,in,not in,child_of,parent_of,inselect,not inselect|}', ${3:value})"
-        ],
-        "description": "Domain Leaf"
-    },
-    "Attributes": {
-        "prefix": "ooattributes",
-        "body": [
-            "${1|invisible,readonly,required|}=\"${2|1,0|}\""
-        ],
-        "description": "Attributes"
     }
 }

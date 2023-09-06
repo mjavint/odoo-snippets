@@ -1,20 +1,20 @@
 {
     "Odoo Module": {
-        "prefix": "odoo-module",
+        "prefix": "oomodule",
         "body": [
             "/** @odoo-module **/"
         ],
         "description": "Define Odoo Module"
     },
     "Import Component": {
-        "prefix": "imc",
+        "prefix": "ooimc",
         "body": [
             "const { Component } = owl;"
         ],
         "description": "Import Component"
     },
     "Import Component and useState": {
-        "prefix": "imcs",
+        "prefix": "ooimcs",
         "body": [
             "const { Component } = owl;",
             "const { useState } = owl.hooks;"
@@ -22,7 +22,7 @@
         "description": "Import Component and useState"
     },
     "Component": {
-        "prefix": "oc",
+        "prefix": "ooc",
         "body": [
             "export class ${1:MyComponent} extends Component {",
             "\t$0",
@@ -31,7 +31,7 @@
         "description": "Component"
     },
     "Component with Constructor": {
-        "prefix": "occ",
+        "prefix": "oocc",
         "body": [
             "export class ${1:MyComponent} extends Component {",
             "\tconstructor(...args) {",
@@ -43,7 +43,7 @@
         "description": "Component with Constructor"
     },
     "Component with Setup": {
-        "prefix": "ocs",
+        "prefix": "oocs",
         "body": [
             "export class ${1:MyComponent} extends Component {",
             "\tsetup() {",
@@ -55,7 +55,7 @@
         "description": "Component with Setup"
     },
     "Setup": {
-        "prefix": "ms",
+        "prefix": "oosetup",
         "body": [
             "setup() {",
             "\tsuper.setup();",
@@ -65,7 +65,7 @@
         "description": "Setup"
     },
     "willStart": {
-        "prefix": "mws",
+        "prefix": "oows",
         "body": [
             "async willStart() {",
             "\t$0",
@@ -74,7 +74,7 @@
         "description": "willStart"
     },
     "mounted": {
-        "prefix": "mm",
+        "prefix": "oom",
         "body": [
             "mounted() {",
             "\t$0",
@@ -83,7 +83,7 @@
         "description": "mounted"
     },
     "willUpdateProps": {
-        "prefix": "mwup",
+        "prefix": "oowup",
         "body": [
             "async willUpdateProps(nextProps) {",
             "\t$0",
@@ -92,7 +92,7 @@
         "description": "mounted"
     },
     "willPatch": {
-        "prefix": "mwp",
+        "prefix": "oowp",
         "body": [
             "willPatch() {",
             "\t$0",
@@ -101,7 +101,7 @@
         "description": "willPatch"
     },
     "patched": {
-        "prefix": "mp",
+        "prefix": "oopatch",
         "body": [
             "patched() {",
             "\t$0",
@@ -110,7 +110,7 @@
         "description": "patched"
     },
     "willUnmount": {
-        "prefix": "mwum",
+        "prefix": "oowum",
         "body": [
             "willUnmount() {",
             "\t$0",
@@ -119,7 +119,7 @@
         "description": "willUnmount"
     },
     "catchError": {
-        "prefix": "mce",
+        "prefix": "ooce",
         "body": [
             "catchError(error) {",
             "\t$0",
@@ -128,77 +128,77 @@
         "description": "catchError"
     },
     "useState": {
-        "prefix": "uss",
+        "prefix": "oohus",
         "body": [
             "this.state = useState({ $1: $2 });"
         ],
         "description": "useState"
     },
     "useRef": {
-        "prefix": "usr",
+        "prefix": "oohur",
         "body": [
             "this.ref = useRef('$1');"
         ],
         "description": "useRef"
     },
     "useContext": {
-        "prefix": "usc",
+        "prefix": "oohoc",
         "body": [
             "this.context = useContext($1);"
         ],
         "description": "useContext"
     },
     "useStore": {
-        "prefix": "ust",
+        "prefix": "oohust",
         "body": [
             "this.state = useStore((state) => state);"
         ],
         "description": "useStore"
     },
     "useDispatch": {
-        "prefix": "usd",
+        "prefix": "oohud",
         "body": [
             "this.dispatch = useDispatch();"
         ],
         "description": "useDispatch"
     },
     "onMounted": {
-        "prefix": "onm",
+        "prefix": "ooonm",
         "body": [
             "onMounted($1)"
         ],
         "description": "onMounted"
     },
     "onWillUnmount": {
-        "prefix": "onwum",
+        "prefix": "ooonwum",
         "body": [
             "onWillUnmount($1)"
         ],
         "description": "onWillUnmount"
     },
     "onWillPatch": {
-        "prefix": "onwp",
+        "prefix": "ooonwp",
         "body": [
             "onWillPatch($1)"
         ],
         "description": "onWillPatch"
     },
     "onPatched": {
-        "prefix": "onp",
+        "prefix": "ooonp",
         "body": [
             "onPatched($1)"
         ],
         "description": "onPatched"
     },
     "onWillStart": {
-        "prefix": "onws",
+        "prefix": "ooonws",
         "body": [
             "onWillStart($1)"
         ],
         "description": "onWillStart"
     },
     "onWillUpdateProps": {
-        "prefix": "onwup",
+        "prefix": "ooonwup",
         "body": [
             "onWillUpdateProps(nextProps => {",
             "\t$0",

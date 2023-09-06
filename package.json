@@ -37,6 +37,9 @@
       {
         "language": "javascript",
         "path": "./snippets/js-snippets.json"
+      },
+      {
+        "path": "./snippets/global.code-snippets"
       }
     ]
   },
