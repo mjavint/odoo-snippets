@@ -3,6 +3,7 @@
 ### Version 1.2.3
 
 - Added new snippets for OWL
+- Fixed a bug that prevented putting the correct name in the group in security
 
 ### Version 1.2.2
 
