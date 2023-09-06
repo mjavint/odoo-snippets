@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+oov
+
+
+
+
+        <record id="action_library_app" model="ir.actions.act_window">
+            <field name="name">Library App</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">library.app</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Library App.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Library App" id="menu_library_app" parent="menu_parent_id" action="action_library_app"/>
+
+    </data>
+</odoo>

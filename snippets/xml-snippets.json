@@ -187,8 +187,8 @@
         "prefix": "oovgantt",
         "body": [
             "",
-            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
-            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "        <record id=\"view_${1:model_name}_gantt\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.gantt</field>",
             "            <field name=\"model\">${1/_/./g}</field>",
             "            <field name=\"arch\" type=\"xml\">",
             "               <gantt string=\"${2}\" date_start=\"${3:date_start_field}\" date_stop=\"${4:date_stop_field}\">",
@@ -201,11 +201,11 @@
         "description": "View Gantt"
     },
     "View Cohort": {
-        "prefix": "oovgantt",
+        "prefix": "oovcohort",
         "body": [
             "",
-            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
-            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "        <record id=\"view_${1:model_name}_cohort\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.cohort</field>",
             "            <field name=\"model\">${1/_/./g}</field>",
             "            <field name=\"arch\" type=\"xml\">",
             "               <cohort string=\"${2}\" date_start=\"${3:date_start_field}\" date_stop=\"${4:date_stop_field}\">",
@@ -218,7 +218,7 @@
         "description": "View Cohort"
     },
     "View Calendar": {
-        "prefix": "oovgantt",
+        "prefix": "oovcalendar",
         "body": [
             "",
             "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
@@ -238,8 +238,8 @@
         "prefix": "oovgraph",
         "body": [
             "",
-            "        <record id=\"view_${1:model_name}_search\" model=\"ir.ui.view\">",
-            "            <field name=\"name\">view.${1/_/./g}.search</field>",
+            "        <record id=\"view_${1:model_name}_calendar\" model=\"ir.ui.view\">",
+            "            <field name=\"name\">view.${1/_/./g}.calendar</field>",
             "            <field name=\"model\">${1/_/./g}</field>",
             "            <field name=\"arch\" type=\"xml\">",
             "               <graph string=\"${2}\" type=\"${3|bar,line,pie|}\">",
