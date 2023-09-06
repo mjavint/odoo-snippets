@@ -1,9 +1,7 @@
 # Change Log
 
-All notable changes to the "odoo-snippets" extension will be documented in this file.
+### Version 1.2.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- Fixed some of the snippets not working properly
+- Added more snippets for python, xml and qweb
+- Fixed minor bugs and correctly added descriptions and access
