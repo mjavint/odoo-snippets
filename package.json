@@ -3,7 +3,7 @@
   "displayName": "Odoo 16+ Snippets",
   "description": "Odoo 16+ Snippets",
   "icon": "src/icon/odoo.png",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engines": {
     "vscode": "^1.81.0"
   },
