@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_prueba_name_all,prueba.name.all,model_prueba_name,,1,1,1,1
-access_prueba_name_group_test,prueba.name.group.test,model_prueba_name,group.name,1,1,1,1

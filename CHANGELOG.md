@@ -1,5 +1,15 @@
 # Change Log
 
+### Version 1.3.1
+
+- The extension has been renamed (Odoo Snippets Final)
+
+### Version 1.3.0
+
+- The extension has been renamed (Odoo Framework Snippets)
+- Changes were made to some of the xml and python snippets
+- Added snippets for inheritance, buttons and new actions
+
 ### Version 1.2.3
 
 - Added new snippets for OWL

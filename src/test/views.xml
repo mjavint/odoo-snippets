@@ -1,26 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-oov
+<div class="oe_chatter">
+    <field name="message_follower_ids" widget="mail_followers"/>
+    <field name="activity_ids" widget="mail_activity"/>
+    <field name="message_ids" widget="mail_thread"/>
+</div>
 
-
-
-
-        <record id="action_library_app" model="ir.actions.act_window">
-            <field name="name">Library App</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">library.app</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    There is no examples click here to add new Library App.
-                </p>
-            </field>
-        </record>
-
-        <menuitem name="Library App" id="menu_library_app" parent="menu_parent_id" action="action_library_app"/>
-
-    </data>
-</odoo>
+<record model="ir.cron" id="">
+    <field name="name"></field>
+    <field name="model_id" ref=""/>
+    <field name="state">next_activity</field>
+    <field name="user_id" ref="base.user_root"/>
+    <field name="interval_number">1</field>
+    <field name="interval_type">weeks</field>
+    <field name="numbercall">-1</field>
+    <field name="priority"></field>
+    <field name="doall">True</field>
+    <field name="code"></field>
+</record>
