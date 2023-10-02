@@ -1,0 +1,56 @@
+{
+    "Create Security Rule": {
+        "prefix": "oorule",
+        "body": [
+            "<record id=\"${1:rule_id}\" model=\"ir.rule\">",
+            "\t<field name=\"name\">${2:A description of the rule's role}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${3:model_manage}\"/>",
+            "\t<field name=\"perm_${4|create,read,write,unlink|}\" eval=\"${5|False,True|}\"/>",
+            "\t<field name=\"groups\" eval=\"[Command.link(ref('base.group_user'))]\"/>",
+            "\t<field name=\"domain_force\">[",
+            "\t\t'|', ('user_id', '=', user.id),",
+            "\t\t('user_id', '=', False)",
+            "\t\t]",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Security Rule"
+    },
+    "Shareable Records": {
+        "prefix": "oomulticompany",
+        "body": [
+            "<!-- Shareable Records -->",
+            "<record model=\"ir.rule\" id=\"${1:record_shared_company_rule}\">",
+            "\t<field name=\"name\">${2:Shared Record: multi-company}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${3:record_shared}\"/>",
+            "\t<field name=\"global\" eval=\"True\"/>",
+            "\t<field name=\"domain_force\">",
+            "\t\t['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Shareable Records"
+    },
+    "Company-restricted Records": {
+        "prefix": "oomulticompany",
+        "body": [
+            "<!-- Company-restricted Records -->",
+            "<record model=\"ir.rule\" id=\"${1:record_restricted_company_rule}\">",
+            "\t<field name=\"name\">${2:Restricted Record: multi-company}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${3:record_restricted}\"/>",
+            "\t<field name=\"global\" eval=\"True\"/>",
+            "\t<field name=\"domain_force\">",
+            "\t\t[('company_id', 'in', company_ids)]",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Company-restricted Records"
+    },
+    "Multi Company Field": {
+        "prefix": "oomulticompany",
+        "body": [
+            "<field name=\"company_id\" groups=\"base.group_multi_company\"/>"
+        ],
+        "description": "Multi Company Field"
+    },
+}

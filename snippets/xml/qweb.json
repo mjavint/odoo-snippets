@@ -1,0 +1,80 @@
+{
+    "Qweb Template": {
+        "prefix": "ootemplate",
+        "body": [
+            "<template id=\"${1}\">",
+            "    ${0}",
+            "</template>"
+        ],
+        "description": "Qweb Template"
+    },
+    "Qweb t-*": {
+        "prefix": "ooqtag",
+        "body": [
+            "t-${1|set,value,esc,call,if,elif,else,name,foreach,as,field|}=\"${2:value}\"${0}"
+        ],
+        "description": "Qweb t-*"
+    },
+    "Qweb Report Template": {
+        "prefix": "ooreport",
+        "body": [
+            "<template id=\"report_${1:model_name}_view\">",
+            "\t<t t-call=\"web.html_container\">",
+            "\t\t<t t-foreach=\"docs\" t-as=\"doc\">",
+            "\t\t\t<t t-call=\"web.external_layout\">",
+            "\t\t\t\t<div class=\"page\">",
+            "\t\t\t\t\t<h2>Report title</h2>",
+            "\t\t\t\t\t<p>This object's name is <span t-field=\"o.name\"/>",
+            "\t\t\t\t\t</p>",
+            "\t\t\t\t</div>",
+            "\t\t\t</t>",
+            "\t\t</t>",
+            "\t</t>",
+            "</template>"
+        ],
+        "description": "Qweb Report Template"
+    },
+    "Qweb Report Template with call other template": {
+        "prefix": "ooreport",
+        "body": [
+            "<template id=\"report_${1:model_name}_view\">",
+            "\t<t t-call=\"web.html_container\">",
+            "\t\t<t t-foreach=\"docs\" t-as=\"doc\">",
+            "\t\t\t<t t-call=\"web.external_layout\">",
+            "\t\t\t\t<div class=\"page\">",
+            "\t\t\t\t\t<t t-call=\"report.child_layout_id\"/>",
+            "\t\t\t\t</div>",
+            "\t\t\t</t>",
+            "\t\t</t>",
+            "\t</t>",
+            "</template>",
+            "",
+            "<template id=\"child_layout_id\" name=\"Child Layout\">",
+            "\t<h2>Report title</h2>",
+            "\t<p>This object's name is <span t-field=\"o.name\"/>",
+            "\t</p>",
+            "</template>"
+        ],
+        "description": "Qweb Report Template with call other template"
+    },
+    "Qweb Report Table Details": {
+        "prefix": "ooreportdetails",
+        "body": [
+            "<table class=\"table table-condensed\">",
+            "\t<thead>",
+            "\t\t<tr>",
+            "\t\t\t<th>${1:column_title}</th>",
+            "\t\t</tr>",
+            "\t</thead>",
+            "\t<tbody>",
+            "\t\t<tr t-foreach=\"${2:object_iterable}\" t-as=\"${3:var}\">",
+            "\t\t\t<td>",
+            "\t\t\t\t<span t-field=\"${3}${0}\"/>",
+            "\t\t\t</td>",
+            "\t\t</tr>",
+            "\t</tbody>",
+            "</table>"
+        ],
+        "description": "Qweb Report Table Details"
+    }
+}

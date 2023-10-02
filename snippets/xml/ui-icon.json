@@ -1,0 +1,9 @@
+{
+    "UI Icon Odoo": {
+        "prefix": "ooicon",
+        "body": [
+            "<i class=\"oi oi-${1|apps,group,launch,odoo,panel-right,search,settings-adjust,studio,view-cohort,view-kanban,view-list,view-pivot,voip|}\"/>"
+        ],
+        "description": "UI Icon Odoo"
+    }
+}

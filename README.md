@@ -1,4 +1,4 @@
-# Odoo 16+ Snippets
+# Odoo Snippets Final
 
 Powerful snippets to improve productivity in the Python Framework, Odoo Javascript and also in the QWeb template engine
 
