@@ -682,5 +682,19 @@
             ""
         ],
         "description": "x2m update"
+    },
+    "Multi Company": {
+        "prefix": "oomulticompany",
+        "body": [
+            "_check_company_auto = True",
+            "",
+            "company_id = fields.Many2one(",
+            "\tcomodel_name='res.company',",
+            "\trequired=True,",
+            "\tdefault=lambda self: self.env.company,",
+            ")",
+            "${1:other_record_id} = fields.Char(string=_('${2}'), check_company=True)"
+        ],
+        "description": "Multi Company"
     }
 }

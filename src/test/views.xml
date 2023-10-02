@@ -1,18 +1,14 @@
-<div class="oe_chatter">
-    <field name="message_follower_ids" widget="mail_followers"/>
-    <field name="activity_ids" widget="mail_activity"/>
-    <field name="message_ids" widget="mail_thread"/>
-</div>
-
-<record model="ir.cron" id="">
-    <field name="name"></field>
-    <field name="model_id" ref=""/>
-    <field name="state">next_activity</field>
-    <field name="user_id" ref="base.user_root"/>
-    <field name="interval_number">1</field>
-    <field name="interval_type">weeks</field>
-    <field name="numbercall">-1</field>
-    <field name="priority"></field>
-    <field name="doall">True</field>
-    <field name="code"></field>
-</record>
+"<table class=\"table table-condensed\">",
+"\t<thead>",
+"\t\t<tr>",
+"\t\t\t<th>${1:column_title}</th>",
+"\t\t</tr>",
+"\t</thead>",
+"\t<tbody>",
+"\t\t<tr t-foreach=\"${2:object_iterable}\" t-as=\"${3:var}\">",
+"\t\t\t<td>",
+"\t\t\t\t<span t-field=\"${2}\"/>",
+"\t\t\t</td>",
+"\t\t</tr>",
+"\t</tbody>",
+"</table>",

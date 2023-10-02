@@ -1,5 +1,10 @@
 # Change Log
 
+### Version 1.4.0
+
+- Added a complete template to start making a new OWL component (ootemplate)
+- Added a snippet to create a details table in the reports (ooreportdetails)
+
 ### Version 1.3.1
 
 - The extension has been renamed (Odoo Snippets Final)
