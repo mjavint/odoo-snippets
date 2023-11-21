@@ -1,24 +1,20 @@
 {
     "OWL Template Component": {
-        "prefix": "ootemplate",
+        "prefix": "ooc",
         "body": [
             "/** @odoo-module **/",
-            "",
-            "const { Component, useState, mount, xml } = owl;",
-            "",
-            "class MyComponent extends Component {",
-            "\tsetup() {",
-            "\t\tthis.state = useState({ value: 1 });",
-            "\t}",
-            "",
-            "\tincrement() {",
-            "\t\tthis.state.value++;",
+            "\t",
+            "import { registry } from '@web/core/registry';",
+            "const { Component, useState, xml } = owl;",
+            "\t",
+            "export class $1 extends Component {",
+            "\tsetup(){",
+            "\t\tthis.state = useState({});",
             "\t}",
             "}",
-            "MyComponent.template = xml",
-            "\t`<div t-on-click=\"increment\">",
-            "\t\t<t t-esc=\"state.value\">",
-            "\t</div>`;"
+            "\t",
+            "$1.template = '${2:name_template}'",
+            "registry.category('${3|fields,views,actions,effects,formatters,main_components,parsers,systray,user_menuitems|}').add('$2', $1);"
         ],
         "description": "OWL Template Component"
     },

@@ -1,14 +1,10 @@
-"<table class=\"table table-condensed\">",
-"\t<thead>",
-"\t\t<tr>",
-"\t\t\t<th>${1:column_title}</th>",
-"\t\t</tr>",
-"\t</thead>",
-"\t<tbody>",
-"\t\t<tr t-foreach=\"${2:object_iterable}\" t-as=\"${3:var}\">",
-"\t\t\t<td>",
-"\t\t\t\t<span t-field=\"${2}\"/>",
-"\t\t\t</td>",
-"\t\t</tr>",
-"\t</tbody>",
-"</table>",
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="myaddon.MyComponent" owl="1">
+        <div t-on-click="increment">
+            <t t-esc="state.value"/>
+        </div>
+    </t>
+
+</templates>

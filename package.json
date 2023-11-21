@@ -3,7 +3,7 @@
   "displayName": "Odoo Snippets Final",
   "description": "Powerful snipppets for Odoo ERP",
   "icon": "src/icon/odoo.png",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "engines": {
     "vscode": "^1.81.1"
   },
